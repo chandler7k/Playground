@@ -162,6 +162,7 @@ class HelloWorldOperation: GroupOperation{
         
         op2.addDependency(op)
         operations = [op2,op]
+        
     }
 }
 
