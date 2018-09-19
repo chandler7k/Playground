@@ -71,15 +71,11 @@ struct IntegetQueue: Queue{
 }
 
 
-struct MyQueue{
-    var stackA: Stack
-    var stackB: Stack
+struct MyQueue<T>{
+    var stackA: T
+    var stackB: T
     
-    init() {
-        stackA = Stack()
-        stackB = Stack()
-        
-    }
+    
     var isEmpty: Bool{
         return stackA.isEmpty && stackB.isEmpty
     }
