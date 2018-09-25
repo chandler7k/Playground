@@ -9,7 +9,7 @@
 #import "BNRHypnosisViewController.h"
 #import "BNRHypnosisView.h"
 @interface BNRHypnosisViewController ()
-
+//@property (weak,nonatomic) IBOutlet UITextField* textField;
 @end
 
 @implementation BNRHypnosisViewController
@@ -22,6 +22,14 @@
 - (void)loadView
 {
     BNRHypnosisView *backgroundView = [[BNRHypnosisView alloc] init];
+    CGRect textFieldRect = CGRectMake(40, 70, 240, 30);
+    UITextField *textField = [[UITextField alloc] initWithFrame:textFieldRect];
+    textField.borderStyle = UITextBorderStyleRoundedRect;
+    textField.placeholder = @"ads";
+    textField.returnKeyType = UIReturnKeyDone;
+    
+    [backgroundView addSubview:textField];
+    textField.delegate = self;
     self.view = backgroundView;
 }
 
@@ -35,6 +43,11 @@
     return self;
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    return YES;
+}
+
 /*
 #pragma mark - Navigation
 
@@ -45,4 +58,8 @@
 }
 */
 
+
+
+
 @end
+
