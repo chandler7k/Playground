@@ -297,6 +297,18 @@ make2(&ln)
 
 print(ln)
 
+func foo(){
+    var x = 1
+    var xPlusOne: Int {
+        return x + 1
+    }
+    
+    print(xPlusOne)
+}
+
+foo()
+
+
 
 
 
