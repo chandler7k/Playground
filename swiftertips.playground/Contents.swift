@@ -252,4 +252,52 @@ func +(left: Vector2D,right: Vector2D) -> Vector2D{
 
 let v4 = v1 + v2
 
+precedencegroup DotProductPrecedence{
+    associativity: left
+    higherThan: MultiplicationPrecedence
+    
+}
+infix operator +*: DotProductPrecedence
+
+func +*(left: Vector2D,right: Vector2D) -> Double{
+    return left.x * right.x + left.y * right.y
+
+}
+let v5 = v1 +* v2
+
+// func参数修饰
+func incrementor(variable: Int) -> Int{
+    var variable = variable
+    variable += 1
+    return variable
+}
+
+func incrementor(variable: inout Int){
+    variable += 1
+}
+
+var luckNumber = 1
+incrementor(variable: &luckNumber)
+print(luckNumber)
+
+
+func makeIncrementor(addNumber: Int) -> ((inout Int) -> ()){
+    
+    func makeIncrementor(variable: inout Int) ->(){
+        variable += addNumber
+    }
+    
+    return incrementor
+}
+
+var make2 = makeIncrementor(addNumber: 2)
+var ln = 3
+
+make2(&ln)
+
+print(ln)
+
+
+
+
 
