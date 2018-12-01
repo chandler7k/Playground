@@ -351,7 +351,10 @@ class Person: ExpressibleByStringLiteral{
 let p: Person = "xiaoming"
 print(p.name)
 
-//>>
+
+
+// the hell konow what's next
+
 
 
 
