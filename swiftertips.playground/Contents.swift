@@ -297,6 +297,91 @@ make2(&ln)
 
 print(ln)
 
+func foo(){
+    var x = 1
+    var xPlusOne: Int {
+        return x + 1
+    }
+    
+    print(xPlusOne)
+}
+
+foo()
+
+enum MyBool: Int{
+    case myTrue, myFalse
+}
+
+extension MyBool: ExpressibleByBooleanLiteral{
+//    typealias BooleanLiteralType = Bool
+    init(booleanLiteral value: Bool) {
+        self = value ? .myTrue : .myFalse
+    }
+    
+    
+}
+
+let myTrue: MyBool = true
+myTrue.rawValue
+
+class Person: ExpressibleByStringLiteral{
+    typealias StringLiteralType = String
+    typealias ExtendedGraphemeClusterLiteralType = String
+    typealias UnicodeScalarLiteralType = String
+    
+    let name: String
+    init(name value: String){
+        self.name = value
+    }
+
+
+    required convenience init(stringLiteral value: Person.StringLiteralType) {
+        self.init(name: value)
+    }
+    required convenience init(extendedGraphemeClusterLiteral value: Person.ExtendedGraphemeClusterLiteralType) {
+        self.init(name: value)
+    }
+    required convenience init(unicodeScalarLiteral value: Person.UnicodeScalarLiteralType) {
+        self.init(name: value)
+    }
+    
+}
+
+let p: Person = "xiaoming"
+print(p.name)
+
+
+// next: subscript
+extension Array{
+    subscript(input: [Int]) -> ArraySlice<Element>{
+        get {
+            var result = ArraySlice<Element>()
+            for i in input{
+                assert(i < self.count, "Index out of range")
+                result.append(self[i])
+            }
+            return result
+        }
+        
+        set{
+            for (index,i) in input.enumerated(){
+                assert(i < self.count, "Index out of range")
+                self[i] = newValue[index]
+            }
+        }
+        
+    }
+}
+
+var arrSub = [1,2,3,4,5]
+arrSub[[0,2,3]]
+arrSub[[0,2,3]] = [2,4,1]
+arrSub
+
+
+// 方法嵌套
+
+
 
 
 
