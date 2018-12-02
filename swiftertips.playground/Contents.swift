@@ -384,5 +384,18 @@ arrSub
 
 
 
+class Persion<T>{}
+typealias Worker<T> = Persion<T>
+typealias WorkId = String
+typealias Worker1 = Persion<WorkId>
+
+protocol Cat{}
+protocol Dog{}
+
+typealias Pat = Cat & Dog
+
+
+typealias Pat2 = Cat & Dog
+
 
 
