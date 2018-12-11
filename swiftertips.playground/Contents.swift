@@ -447,6 +447,14 @@ func myFunc(number: Int..., string: String){
 
 myFunc(number: 1,2,3, string: "hello")
 
+extension NSString {
+//    convenience init(format: NSString, _ args: CVarArg...)
+}
+
+let nname = "tom"
+let date = NSDate()
+let string = NSString(format: "hello %@. Date: %@", nname, date,1)
+
 
 
 
