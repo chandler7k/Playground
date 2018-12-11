@@ -428,5 +428,14 @@ let tiger = Tiger()
 tiger.eat(food: meat)
 
 
+//可变参函数
+
+func sum(input: Int...) -> Int{
+    return input.reduce(0, +)
+}
+
+print(sum(input: 1,2,3,4,5))
+
+
 
 
