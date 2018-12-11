@@ -437,5 +437,16 @@ func sum(input: Int...) -> Int{
 print(sum(input: 1,2,3,4,5))
 
 
+func myFunc(number: Int..., string: String){
+    number.forEach {
+        for i in 0...$0 {
+            print("\(i + 1): \(string)")
+        }
+    }
+}
+
+myFunc(number: 1,2,3, string: "hello")
+
+
 
 
