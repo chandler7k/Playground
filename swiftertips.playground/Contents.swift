@@ -186,7 +186,7 @@ class S{
             print(self.foo)
         }
         
-        foo = "bar"
+        foo = "bar2"
     }
 }
 
@@ -380,9 +380,14 @@ arrSub
 
 
 // 方法嵌套
+//方法内部q可以声明方法
 
 
+//命名空间
+//命名空间主要是对比OC没有namespace，所以必须加前缀
 
+
+//typealias
 
 class Persion<T>{}
 typealias Worker<T> = Persion<T>
@@ -396,6 +401,32 @@ typealias Pat = Cat & Dog
 
 
 typealias Pat2 = Cat & Dog
+
+// associatetype
+
+protocol Food{
+
+}
+
+
+protocol Animal{
+    associatedtype F: Food
+    func eat(food: F)
+}
+
+struct Meat: Food{}
+struct Grass: Food{}
+struct Tiger: Animal {
+    typealias F = Meat
+    func eat(food: Meat) {
+        print("eat meat")
+    }
+}
+let meat = Meat()
+
+let tiger = Tiger()
+tiger.eat(food: meat)
+
 
 
 
