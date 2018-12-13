@@ -394,13 +394,13 @@ typealias Worker<T> = Persion<T>
 typealias WorkId = String
 typealias Worker1 = Persion<WorkId>
 
-protocol Cat{}
-protocol Dog{}
+//protocol Cat{}
+//protocol Dog{}
 
-typealias Pat = Cat & Dog
-
-
-typealias Pat2 = Cat & Dog
+//typealias Pat = Cat & Dog
+//
+//
+//typealias Pat2 = Cat & Dog
 
 // associatetype
 
@@ -454,6 +454,61 @@ extension NSString {
 let nname = "tom"
 let date = NSDate()
 let string = NSString(format: "hello %@. Date: %@", nname, date,1)
+
+//初始化方法顺序
+//保证当前子类实例的成员初始化完成后才能调用父类的初始化
+class Cat {
+    var name: String
+    init() {
+        name = "cat"
+    }
+}
+
+class Lion:Cat{
+    let power: Int
+    override init() {
+        power = 10
+//        super.init()
+//        name = "tiger"
+    }
+}
+
+
+//Designated, Convenience, Required
+class ClassA{
+    let numA: Int
+    required init(num: Int){
+        numA = num
+    }
+    convenience init(bigNum: Bool){
+        self.init(num: bigNum ? 1000 : 1)
+    }
+}
+
+class ClasB: ClassA{
+    let numB: Int
+    required init(num: Int) {
+        numB = num + 1
+        super.init(num: num)
+    }
+    
+}
+
+let cb = ClasB(num: 2)
+class ClassC: ClassA{
+    let numc: Int
+    required init(num: Int) {
+        numc = num + 1
+        super.init(num: num)
+    }
+}
+//只要在子类重写了父类的designated init方法，那么子类就可以使用父类的convenience init方法
+let cc = ClassC(bigNum: true)
+
+
+
+
+
 
 
 
