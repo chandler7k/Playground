@@ -3,17 +3,27 @@
    version = "3.0">
    <TimelineItems>
       <LoggerValueHistoryTimelineItem
-         documentLocation = "file:///Users/chandler7k/Documents/GitHub/Playground/swiftertips.playground#CharacterRangeLen=11&amp;CharacterRangeLoc=3575&amp;EndingColumnNumber=16&amp;EndingLineNumber=232&amp;StartingColumnNumber=5&amp;StartingLineNumber=232&amp;Timestamp=566236900.758473"
+         documentLocation = "file:///Users/zouhuanlin/Documents/demos/Playground/swiftertips.playground#CharacterRangeLen=11&amp;CharacterRangeLoc=3575&amp;EndingColumnNumber=16&amp;EndingLineNumber=232&amp;StartingColumnNumber=5&amp;StartingLineNumber=232&amp;Timestamp=566314156.754353"
          selectedRepresentationIndex = "0"
          shouldTrackSuperviewWidth = "NO">
       </LoggerValueHistoryTimelineItem>
       <LoggerValueHistoryTimelineItem
-         documentLocation = "file:///Users/chandler7k/Documents/GitHub/Playground/swiftertips.playground#CharacterRangeLen=2&amp;CharacterRangeLoc=3957&amp;EndingColumnNumber=7&amp;EndingLineNumber=252&amp;StartingColumnNumber=5&amp;StartingLineNumber=252&amp;Timestamp=566236900.758696"
+         documentLocation = "file:///Users/zouhuanlin/Documents/demos/Playground/swiftertips.playground#CharacterRangeLen=2&amp;CharacterRangeLoc=3957&amp;EndingColumnNumber=7&amp;EndingLineNumber=252&amp;StartingColumnNumber=5&amp;StartingLineNumber=252&amp;Timestamp=566314156.7545511"
          selectedRepresentationIndex = "0"
          shouldTrackSuperviewWidth = "NO">
       </LoggerValueHistoryTimelineItem>
       <LoggerValueHistoryTimelineItem
-         documentLocation = "file:///Users/chandler7k/Documents/GitHub/Playground/swiftertips.playground#CharacterRangeLen=6&amp;CharacterRangeLoc=7517&amp;EndingColumnNumber=11&amp;EndingLineNumber=455&amp;StartingColumnNumber=5&amp;StartingLineNumber=455&amp;Timestamp=566236900.758875"
+         documentLocation = "file:///Users/zouhuanlin/Documents/demos/Playground/swiftertips.playground#CharacterRangeLen=6&amp;CharacterRangeLoc=7529&amp;EndingColumnNumber=11&amp;EndingLineNumber=455&amp;StartingColumnNumber=5&amp;StartingLineNumber=455&amp;Timestamp=566314156.754675"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/zouhuanlin/Documents/demos/Playground/swiftertips.playground#CharacterRangeLen=2&amp;CharacterRangeLoc=8191&amp;EndingColumnNumber=7&amp;EndingLineNumber=496&amp;StartingColumnNumber=5&amp;StartingLineNumber=496&amp;Timestamp=566314156.754788"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/zouhuanlin/Documents/demos/Playground/swiftertips.playground#CharacterRangeLen=2&amp;CharacterRangeLoc=8406&amp;EndingColumnNumber=7&amp;EndingLineNumber=505&amp;StartingColumnNumber=5&amp;StartingLineNumber=505&amp;Timestamp=566314156.75494"
          selectedRepresentationIndex = "0"
          shouldTrackSuperviewWidth = "NO">
       </LoggerValueHistoryTimelineItem>
