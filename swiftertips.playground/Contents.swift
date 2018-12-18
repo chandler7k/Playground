@@ -505,8 +505,48 @@ class ClassC: ClassA{
 //只要在子类重写了父类的designated init方法，那么子类就可以使用父类的convenience init方法
 let cc = ClassC(bigNum: true)
 
+//对于希望子类一定实现的designate init方法，可以在父类中添加required关键字，强制子类重写
+//子类的convenience init方法也可以加上required关键字来确保子类必须重写父类的convenience init方法
 
 
+//初始化返回nil
+//swift 默认初始化不返回任何值，也就是说没有返回optional的机会
+
+//新版本swift中对于可能初始化失败的init尽量使用可返回nil的方法
+extension Int{
+    init?(fromString: String){
+        self = 0
+        var digit = fromString.count - 1
+        for c in fromString{
+            var number = 0
+            if let n  = Int(String(c)){
+                number = n
+            }else{
+                switch c {
+                case "一":
+                    number = 1
+                default:
+                    return nil
+                }
+            }
+            
+        }
+    }
+}
+
+
+//static & class
+//protocol中使用static
+//class中可以使用class或static来表示计算属性或类方法，但是存储属性必须使用static
+protocol Myprotocol{
+    static func fooss() ->String
+}
+
+struct Mystruct: Myprotocol{
+    static func fooss() -> String {
+        return "Mystruct"
+    }
+}
 
 
 
