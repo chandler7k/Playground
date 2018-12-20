@@ -537,7 +537,7 @@ extension Int{
 
 //static & class
 //protocol中使用static
-//class中可以使用class或static来表示计算属性或类方法，但是存储属性必须使用static
+//class中可以使用class或static来表示计算属性或类方法，但是存储属性必须使用static,正是因为class可以使用static作为存储属性静态变量声明，才有了目前的单例模式
 protocol Myprotocol{
     static func fooss() ->String
 }
@@ -549,7 +549,32 @@ struct Mystruct: Myprotocol{
 }
 
 
+//多类型和容器
+//any并不是特定的类型，所以容器不仅可以添加同一类型对象，也可以添加实现同一个协议的对象
+//主要是如果用协议来声明使用多类型容器，相对于type cast转化成Any或AnyObject来说，还能保留一部分元素的特性。
+let mixed: [CustomStringConvertible] = [1,"two",3]
+for obj in mixed{
+    print(obj.description)
+}
 
+enum IntorString{
+    case Intvalue(Int)
+    case Stringvalue(String)
+}
+
+let mixed2 = [IntorString.Intvalue(1), IntorString.Stringvalue("hello")]
+for value in mixed2{
+    switch value {
+    case let .Intvalue(i):
+        print(i)
+    case let .Stringvalue(s):
+        print(s.capitalized)
+        
+    }
+}
+
+//default参数
+//主要是swift的default参数不会限制参数的位置。
 
 
 
