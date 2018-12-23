@@ -1,0 +1,1 @@
+/Users/chandler7k/Documents/GitHub/Playground/Rust-Practice/hello-world/hello_cargo/target/debug/libhello_cargo.rmeta: /Users/chandler7k/Documents/GitHub/Playground/Rust-Practice/hello-world/hello_cargo/src/main.rs
