@@ -577,6 +577,21 @@ for value in mixed2{
 //主要是swift的default参数不会限制参数的位置。
 
 
+//正则
+struct RegexHelper{
+    let regex: NSRegularExpression
+    
+    init(_ pattern: String) throws {
+        try regex = NSRegularExpression(pattern: pattern, options: .caseInsensitive)
+    }
+    
+    func match(input: String) -> Bool{
+        let matches = regex.matches(in: input, options: [], range: NSMakeRange(0, input.utf16.count))
+        return matches.count > 0
+    }
+}
+
+
 
 
 
