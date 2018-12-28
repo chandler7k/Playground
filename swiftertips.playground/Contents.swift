@@ -591,6 +591,31 @@ struct RegexHelper{
     }
 }
 
+let mailPattern = "^([a-z0-9_\\.-]+)@([\\da-z\\.-]+)\\.([a-z\\.]{2,6})$"
+let matcher: RegexHelper = try RegexHelper(mailPattern)
+
+let mayBeMailAddress = "onev@onevcat.com"
+
+if matcher.match(input: mayBeMailAddress){
+    print("有效的邮箱地址")
+}
+infix operator =~: MatchPrecedence
+precedencegroup MatchPrecedence{
+    associativity: none
+    higherThan: DefaultPrecedence
+}
+
+
+func =~(lhs: String, rhs: String) -> Bool{
+    do{
+        return try RegexHelper(lhs).match(input: rhs)
+    }catch _ {
+        return false
+    }
+}
+if "onev@onevcat.com" =~ "^([a-z0-9_\\.-]+)@([\\da-z\\.-]+)\\.([a-z\\.]{2,6})$"{
+    print("rigth mail address")
+}
 
 
 
