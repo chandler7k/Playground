@@ -36,6 +36,7 @@
 - (void)setupUI
 {
     maxValue = 9;
+    self.view.backgroundColor = [UIColor whiteColor];
     _selectedAssets = [NSMutableArray array];
     _selectedPhotos = [NSMutableArray array];
     [self.view addSubview:self.imageView];
@@ -51,6 +52,8 @@
     NSLog(@"setupui");
     
 }
+
+
 
 - (void)pushImagePickerController
 {
@@ -209,8 +212,8 @@
     if(!_collectionView){
         _layout = [[UICollectionViewFlowLayout alloc] init];
         CGFloat margin = 4;
-        CGFloat width = self.view.frame.size.height - 2 * margin - 4;
-        CGFloat itemWH = width / 3 - margin;
+        CGFloat width = self.view.frame.size.width - 3 * margin - 4;
+        CGFloat itemWH = width / 4 - margin;
         _layout.itemSize = CGSizeMake(itemWH, itemWH);
         _layout.minimumInteritemSpacing = margin;
         _layout.minimumLineSpacing = margin;

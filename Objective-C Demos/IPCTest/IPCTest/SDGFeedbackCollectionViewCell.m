@@ -14,7 +14,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = [UIColor whiteColor];
+        self.backgroundColor = [UIColor clearColor];
         _imageView = [[UIImageView alloc] init];
         _imageView.contentMode = UIViewContentModeScaleAspectFit;
         [self addSubview:_imageView];
@@ -22,7 +22,7 @@
         
         _deleteBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         [_deleteBtn setImage:[UIImage imageNamed:@"减icon"] forState: UIControlStateNormal];
-        _deleteBtn.imageEdgeInsets = UIEdgeInsetsMake(-10, 0, 0, -10);
+        _deleteBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0);
         [self addSubview:_deleteBtn];
     }
     return self;
@@ -32,7 +32,7 @@
 {
     [super layoutSubviews];
     _imageView.frame = self.bounds;
-    _deleteBtn.frame = CGRectMake(self.tz_width - 36, 0, 36, 36);
+    _deleteBtn.frame = CGRectMake(self.tz_width - 20, 0, 20, 20);
     
 }
 
