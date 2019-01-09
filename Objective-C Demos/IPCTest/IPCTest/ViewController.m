@@ -121,7 +121,7 @@
         cell.deleteBtn.hidden = NO;
     }
     cell.deleteBtn.tag = indexPath.item;
-    [cell.deleteBtn addTarget:self action:@selector(deleteBtn) forControlEvents:UIControlEventTouchUpInside];
+    [cell.deleteBtn addTarget:self action:@selector(deleteButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
     return cell;
 }
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
@@ -249,9 +249,23 @@
 
 
 #pragma actions
-- (void)deleteButtonClicked
+- (void)deleteButtonClicked:(UIButton *)sender
 {
+    if ([self collectionView:self.collectionView numberOfItemsInSection:0] <= _selectedPhotos.count) {
+        [_selectedPhotos removeObjectAtIndex:sender.tag];
+        [_selectedAssets removeObjectAtIndex:sender.tag];
+        [self.collectionView reloadData];
+        return;
+    }
     
+    [_selectedPhotos removeObjectAtIndex:sender.tag];
+    [_selectedAssets removeObjectAtIndex:sender.tag];
+    [_collectionView performBatchUpdates:^{
+        NSIndexPath *indexPath = [NSIndexPath indexPathForItem:sender.tag inSection:0];
+        [self->_collectionView deleteItemsAtIndexPaths:@[indexPath]];
+    } completion:^(BOOL finished) {
+        [self->_collectionView reloadData];
+    }];
 }
 
 - (void)takePhoto
