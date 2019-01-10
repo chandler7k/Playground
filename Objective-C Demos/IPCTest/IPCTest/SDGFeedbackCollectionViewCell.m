@@ -31,8 +31,9 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    _imageView.frame = self.bounds;
+    _imageView.frame = CGRectMake(10, 10, self.tz_width - 20, self.tz_height - 20);
     _deleteBtn.frame = CGRectMake(self.tz_width - 20, 0, 20, 20);
+    
     
 }
 
@@ -46,8 +47,5 @@
     _row = row;
     _deleteBtn.tag = row;
 }
-
-
-
 
 @end

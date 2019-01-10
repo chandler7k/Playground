@@ -117,11 +117,12 @@
     if(indexPath.item == _selectedPhotos.count){
         cell.imageView.image = [UIImage imageNamed:@"addIcon"];
         cell.deleteBtn.hidden = YES;
-        
+        cell.backgroundColor = [UIColor clearColor];
     }else{
         cell.imageView.image = _selectedPhotos[indexPath.item];
         cell.asset = _selectedAssets[indexPath.item];
         cell.deleteBtn.hidden = NO;
+        cell.backgroundColor =[[UIColor alloc] initWithRed:251.0 / 255.0 green:251.0 / 255.0 blue:251.0 / 255.0 alpha:1.0];
     }
     cell.deleteBtn.tag = indexPath.item;
     [cell.deleteBtn addTarget:self action:@selector(deleteButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
