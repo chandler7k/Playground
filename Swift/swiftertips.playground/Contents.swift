@@ -617,6 +617,7 @@ if "onev@onevcat.com" =~ "^([a-z0-9_\\.-]+)@([\\da-z\\.-]+)\\.([a-z\\.]{2,6})$"{
     print("rigth mail address")
 }
 
+//MARK: - 模式匹配
 
 
 
