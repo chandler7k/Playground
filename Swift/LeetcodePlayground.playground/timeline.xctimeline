@@ -3,17 +3,44 @@
    version = "3.0">
    <TimelineItems>
       <LoggerValueHistoryTimelineItem
+<<<<<<< HEAD
          documentLocation = "file:///Users/zouhuanlin/Documents/GitHub/Playground/Swift/LeetcodePlayground.playground#CharacterRangeLen=1217&amp;CharacterRangeLoc=0&amp;EndingColumnNumber=0&amp;EndingLineNumber=43&amp;StartingColumnNumber=0&amp;StartingLineNumber=0&amp;Timestamp=569174159.939095"
+=======
+         documentLocation = "file:///Users/chandler7k/Documents/GitHub/Playground/Swift/LeetcodePlayground.playground#CharacterRangeLen=494&amp;CharacterRangeLoc=0&amp;EndingColumnNumber=0&amp;EndingLineNumber=23&amp;StartingColumnNumber=0&amp;StartingLineNumber=0&amp;Timestamp=569251134.243721"
+>>>>>>> 228b24f0fca0e429cc9eb54b0c4204c8556e4b27
          selectedRepresentationIndex = "0"
          shouldTrackSuperviewWidth = "NO">
       </LoggerValueHistoryTimelineItem>
       <LoggerValueHistoryTimelineItem
+<<<<<<< HEAD
          documentLocation = "file:///Users/zouhuanlin/Documents/GitHub/Playground/Swift/LeetcodePlayground.playground#CharacterRangeLen=1217&amp;CharacterRangeLoc=0&amp;EndingColumnNumber=0&amp;EndingLineNumber=43&amp;StartingColumnNumber=0&amp;StartingLineNumber=0&amp;Timestamp=569174159.939224"
+=======
+         documentLocation = "file:///Users/chandler7k/Documents/GitHub/Playground/Swift/LeetcodePlayground.playground#CharacterRangeLen=494&amp;CharacterRangeLoc=0&amp;EndingColumnNumber=0&amp;EndingLineNumber=23&amp;StartingColumnNumber=0&amp;StartingLineNumber=0&amp;Timestamp=569251134.243977"
+>>>>>>> 228b24f0fca0e429cc9eb54b0c4204c8556e4b27
          selectedRepresentationIndex = "0"
          shouldTrackSuperviewWidth = "NO">
       </LoggerValueHistoryTimelineItem>
       <LoggerValueHistoryTimelineItem
+<<<<<<< HEAD
          documentLocation = "file:///Users/zouhuanlin/Documents/GitHub/Playground/Swift/LeetcodePlayground.playground#CharacterRangeLen=3&amp;CharacterRangeLoc=506&amp;EndingColumnNumber=16&amp;EndingLineNumber=18&amp;StartingColumnNumber=13&amp;StartingLineNumber=18&amp;Timestamp=569174159.939322"
+=======
+         documentLocation = "file:///Users/chandler7k/Documents/GitHub/Playground/Swift/LeetcodePlayground.playground#CharacterRangeLen=494&amp;CharacterRangeLoc=0&amp;EndingColumnNumber=0&amp;EndingLineNumber=23&amp;StartingColumnNumber=0&amp;StartingLineNumber=0&amp;Timestamp=569251134.244248"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/chandler7k/Documents/GitHub/Playground/Swift/LeetcodePlayground.playground#CharacterRangeLen=15&amp;CharacterRangeLoc=479&amp;EndingColumnNumber=0&amp;EndingLineNumber=23&amp;StartingColumnNumber=0&amp;StartingLineNumber=22&amp;Timestamp=569251134.244444"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/chandler7k/Documents/GitHub/Playground/Swift/LeetcodePlayground.playground#CharacterRangeLen=24&amp;CharacterRangeLoc=395&amp;EndingColumnNumber=0&amp;EndingLineNumber=16&amp;StartingColumnNumber=16&amp;StartingLineNumber=15&amp;Timestamp=569251134.2446719"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/chandler7k/Documents/GitHub/Playground/Swift/LeetcodePlayground.playground#CharacterRangeLen=11&amp;CharacterRangeLoc=127&amp;EndingColumnNumber=20&amp;EndingLineNumber=5&amp;StartingColumnNumber=9&amp;StartingLineNumber=5&amp;Timestamp=569251134.244944"
+>>>>>>> 228b24f0fca0e429cc9eb54b0c4204c8556e4b27
          selectedRepresentationIndex = "0"
          shouldTrackSuperviewWidth = "NO">
       </LoggerValueHistoryTimelineItem>
