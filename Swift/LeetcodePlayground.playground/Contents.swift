@@ -1,20 +1,43 @@
+
 class Solution {
-    static func letterCombinations(_ digits: String) -> [String] {
-        let letters = [2 : "abc", 3 : "def", 4 : "ghi", 5 : "jkl", 6 : "mno", 7 : "pqrs", 8 : "tuv", 9 : "wxyz"]
-        var res: [String] = []
-        
-        for c in digits{
-            let key = Int(String(c))!
-            let strings = Array(letters[key]!).map{String($0)}
-            if res.count == 0{
-                res = strings
+    static func search(_ nums: [Int], _ target: Int) -> Int {
+        guard nums.count > 0 else{
+            return -1
+        }
+        return search1(nums: nums, left: 0, right: nums.count - 1, target: target)
+    }
+    
+    static func search1(nums: [Int], left: Int, right: Int, target: Int) -> Int{
+        if(left == right){
+            if(nums[left] == target){
+                return left
             }else{
-                res = res.flatMap{(string) in strings.map{string + $0}}
+                return -1
             }
-            
         }
         
-        return res
+        let mid = (right + left) / 2
+        
+        
+        
+        if(nums[left] <= nums[mid]){
+            if(target >= nums[left] && target <= nums[mid]){
+                return search1(nums: nums, left: left, right: mid - 1,target: target)
+            }else{
+                return search1(nums:nums, left:mid + 1,right: right,target: target)
+            }
+        }else{
+            if(target > nums[mid] && target <= nums[right]){
+                return search1(nums:nums, left:mid + 1,right: right,target: target)
+            }else{
+                return search1(nums: nums, left: left, right: mid - 1,target: target)
+            }
+        }
+        
+        
+        
     }
 }
-print(Solution.letterCombinations("23"))
+
+print(Solution.search([1,3], 1))
+
