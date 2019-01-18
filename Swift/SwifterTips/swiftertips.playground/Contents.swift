@@ -516,7 +516,7 @@ let cc = ClassC(bigNum: true)
 extension Int{
     init?(fromString: String){
         self = 0
-        var digit = fromString.count - 1
+        let digit = fromString.count - 1
         for c in fromString{
             var number = 0
             if let n  = Int(String(c)){
@@ -617,7 +617,79 @@ if "onev@onevcat.com" =~ "^([a-z0-9_\\.-]+)@([\\da-z\\.-]+)\\.([a-z\\.]{2,6})$"{
     print("rigth mail address")
 }
 
+
 //MARK: - 模式匹配
+//Swift 的 switch 使用了 ~= 操作符进行模式匹配，case作为左参数，等待匹配的switch元素作为操作符的右参数
+func ~=(pattern: NSRegularExpression, input: String) -> Bool{
+    return pattern.numberOfMatches(in: input, options: [], range: NSRange(location: 0, length: input.count)) > 0
+}
+prefix operator ~/
+prefix func ~/(pattern: String) -> NSRegularExpression{
+    return  try! NSRegularExpression(pattern: pattern, options: [])
+}
+
+let contact = ("http://onevcat.com", "onev@onevcat.com")
 
 
+let mailRegex =  ~/"^([a-z0-9_\\.-]+)@([\\da-z\\.-]+)\\.([a-z\\.]{2,6})$"
+let siteReges =  ~/"^(https?:\\/\\/)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([\\/\\w \\.-]*)*\\/?$"
 
+switch contact {
+case (mailRegex, siteReges):
+    print("both mail and site")
+case (_, mailRegex):
+    print("only mail")
+default:
+    print("nothing")
+}
+
+//... & ..<
+
+for i in 0...3{
+    print(i, terminator:"")
+}
+
+let test = "hello"
+let interval = "a"..."z"
+for c in test{
+    if !interval.contains(String(c)){
+        print("\(c) is not a low")
+    }
+}
+
+// AnyClass
+// AnyClass 相当于Class.Type, 但是赋值的时候是Class.self
+class AA{
+    required init() {
+        print("aa hello")
+    }
+    class func method1(){
+        print("hello")
+    }
+}
+
+let typeAA: AA.Type = AA.self
+typeAA.method1()
+
+let typeAA2: AnyClass = AA.self
+(typeAA2 as! AA.Type).method1()
+
+
+class BB: AA{
+    
+}
+class CC: AA{
+    
+}
+
+let usingATypes: [AnyClass] = [BB.self, CC.self]
+func setupAA(_ aaTypes: [AnyClass]){
+    for act in aaTypes{
+        if act is AA.Type{
+            let a = (act as! AA.Type).init()
+            print(a)
+        }
+    }
+}
+setupAA(usingATypes)
+//Protocol 也有 meta protocol, 通过Protocol.Protocol获取
