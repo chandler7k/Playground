@@ -88,3 +88,30 @@ bop.numnber = 3
 // Final
 // 用在class func 和属性前面，表示不能被继承或者重写
 // Final可以理解为”最终“，也就是说已经写的差不多了，不用再修改了，而且没有必要重写或者继承
+// 有些情况下，父类方法的实现必须必须通过子类继承才能实现，然而一般情况下，子类重写了父类方法就不能强制子类方法去调用父类方法，
+//这时可以通过一个在父类中设置一个final方法，去调用一个可以继承的方法，然后让子类去重写这个可以继承的方法，然后直接通过子类去调用这个final方法
+
+// final 可能会带来性能的提升，因为编译器能够获得额外的信息，但是并不能跟OC的动态派发相比，所以如果是追求性能优化（UI、渲染等）不推荐通过添加final去实现。
+class Parentfinal{
+    final func method(){
+        print("start config")
+        methodImp()
+        print("end config")
+    }
+    
+    func methodImp(){
+        fatalError("must be override")
+    }
+}
+
+class Childfinal: Parentfinal{
+    override func methodImp() {
+        print("configing")
+    }
+}
+let pf = Parentfinal()
+let cf = Childfinal()
+cf.method()
+
+
+
