@@ -113,5 +113,36 @@ let pf = Parentfinal()
 let cf = Childfinal()
 cf.method()
 
+// lazy
+//
+class ClassALZ{
+    lazy var str: String = {
+        let str = "hello"
+        print("only print for the first time")
+        return str
+    }()
+}
 
+let datalz = 1...3
+let result = datalz.lazy.map { (i: Int) -> Int in
+    print("handling \(i)")
+    return i * 2
+}
+
+print("reach result")
+for i in result{
+    print("result is \(i)")
+}
+print("end")
+
+//反射
+struct PersonMR{
+    let name: String
+    let age: Int
+}
+
+let xiaoMing = PersonMR(name: "xiaoming", age: 16)
+let r = Mirror(reflecting: xiaoMing)
+
+print(r.children.count)
 
