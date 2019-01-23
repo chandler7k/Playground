@@ -143,6 +143,31 @@ struct PersonMR{
 
 let xiaoMing = PersonMR(name: "xiaoming", age: 16)
 let r = Mirror(reflecting: xiaoMing)
+print("xiaoming is  \(r.displayStyle!)")
+print("property count\(r.children.count)")
 
-print(r.children.count)
+for i in r.children{
+    print("property name: \(String(describing: i.label)), value: \(i.value)")
+}
+
+dump(xiaoMing)
+
+func valueFrom(_ object: Any, _ key: String) -> Any?{
+    let mirror = Mirror(reflecting: object)
+    
+    for child in mirror.children{
+        let (targetKey, targetValue) = (child.label, child.value)
+        if (key == targetKey){
+            return targetValue
+        }
+    }
+    
+    return nil
+}
+
+if let name = valueFrom(xiaoMing, "name") as? String{
+    print(name)
+}
+
+// 隐式解包
 
