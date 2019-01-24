@@ -170,4 +170,33 @@ if let name = valueFrom(xiaoMing, "name") as? String{
 }
 
 // 隐式解包
+//所以隐式解包存在的意义就是，OC的API可以返回为空，因为OC的消息传递可以将消息传递给nil，如果OC代码映射到Swift中，XCode默认映射为optional类型，就是为了防止OC的结果为空。在确定OC的结果一定不为空的时候使用隐式解包，就可以像正常函数一样去调用，而不是复杂的可选链。
+// Xcode新加的NON_NULL关键字让上述操作更简化，只要在可为空的OC API加上nullable关键字修饰就可以单独确定一个可为空的API，映射的时候除了它意外其他全部都是正常类型的API
 
+
+// 多重Optional
+//optional 加？本质上就是一个枚举
+var literalOpstring: String?? = "hello"
+print(literalOpstring)
+
+var aNil: String? = nil
+
+var anotherNil: String?? = aNil
+var litNil: String?? = nil
+
+if anotherNil != nil{
+    print("another nil")
+}
+
+if litNil != nil{
+    print("lit nil")
+}
+
+
+// optional map
+// map 对集合内的元素应用某种规则，并返回一个新的集合
+let nummop: Int? = 3
+let resultmop = nummop.map{
+    return $0 * 2
+}
+print(resultmop)
