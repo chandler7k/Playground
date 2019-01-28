@@ -200,3 +200,23 @@ let resultmop = nummop.map{
     return $0 * 2
 }
 print(resultmop)
+
+// Protocol extension
+protocol MyPEProtocol{
+    func method()
+}
+
+extension MyPEProtocol{
+    func method(){
+        print("call pe method")
+    }
+}
+
+struct MyPEStruct: MyPEProtocol{
+    func method() {
+        print("call in struct")
+    }
+}
+
+MyPEStruct().method()
+
