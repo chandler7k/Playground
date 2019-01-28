@@ -6,7 +6,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
-      title: 'startup name generator',
+        title: 'startup name generator',
       theme: new ThemeData(
         primaryColor: Colors.white,
       ),
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
 class RandomWordsState extends State<RandomWords>{
   final _suggestions = <WordPair>[];
   final _saved = new Set<WordPair>();
-
+  final _hello = new Set<WordPair>();
   final _biggerFont = const TextStyle(fontSize: 18.0);
   @override
   Widget build(BuildContext context) {
