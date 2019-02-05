@@ -17,6 +17,7 @@ class Solution:
             return True
         
         matrix[i * cols + j] = '0'
+        #防止重复走入该点
         if j + 1 < cols and matrix[i * cols + j + 1] == path[0]:
             return self.find(matrix,rows,cols,path[1:],i,j+1)
         elif j - 1 >= 0 and matrix[i * cols + j - 1] == path[0]:
