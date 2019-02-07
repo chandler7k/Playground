@@ -278,6 +278,57 @@ a2.method2()
 a2.method3()
 
 // where 和 模式匹配
-for i in 0..<0{
-    print("hello \(i)")
+let name = ["王二","王小波", "X海英"]
+
+name.forEach{
+    switch $0 {
+    case let x where x.hasPrefix("王"):
+        print("\(x) is the author")
+    default:
+        print("hello \($0)")
+    }
 }
+
+let numw: [Int?] = [99,48, nil]
+let nw = numw.flatMap{$0}
+
+for score in nw where score > 60{
+    print(" pass \(score)")
+}
+
+numw.forEach{
+    if let score  = $0, score > 60{
+        print(", pass \(score)")
+    }else{
+        print("fail")
+    }
+}
+// 注意 现在版本中 泛型的 where M模式匹配必须要在返回类型后声明
+// 旧版本才在泛型 <> 内声明
+public func != <T: RawRepresentable>(lhs: T, rhs: T) -> Bool where T.RawValue: Equatable{
+    return rhs.rawValue != lhs.rawValue
+}
+// 可以用where来限定协议的扩展方法在某些特定条件下才能使用
+//extension Sequence where Self.Iterator.Element: Comparable{
+//    public func sorted() -> [Self.Iterator.Element]
+//}
+
+// indirect enum
+
+indirect enum LinkedList<Element: Comparable>{
+    case empty
+    case node(Element, LinkedList<Element>)
+    func removing(_ element: Element) -> LinkedList<Element>{
+        guard case let .node(value,next) = self else{
+            return .empty
+        }
+        return value == element ? next : LinkedList.node(value, removing(element))
+    }
+}
+let linkedlist = LinkedList.node(1, .node(2, .node(3, .node(4, .empty))))
+print(linkedlist)
+//linkedlist.removing(2)
+print(linkedlist)
+
+
+
