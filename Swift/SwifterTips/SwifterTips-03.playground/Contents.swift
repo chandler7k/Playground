@@ -48,6 +48,7 @@ class MyClassSLJ{
 let fSJ2: (MyClassSLJ) -> (Int) -> Int = MyClassSLJ.methodSL // func methodSL
 let fSJ21 = MyClassSLJ.methodSL // class func methodSL
 
+let fSJ1 = MyClassSLJ.methodSL
 
 
 
