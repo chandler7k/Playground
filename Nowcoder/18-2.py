@@ -8,7 +8,7 @@ class Solution:
         # write code here
         if pHead is None or pHead.next is None:
             return pHead
-        
+        # pre用来保存前一个点
         pCurNode = pHead
         pPreNode = None
         while pCurNode:
@@ -28,6 +28,8 @@ class Solution:
                 while pToDelete is not None and pToDelete.val == value:
                     pNext = pToDelete.next
                     pToDelete = pNext
+            # pre 一定要接上
+            # pre 为空，那也就是说从head开始到Next间的部分都重复都被删掉了，head接上    
             if pPreNode is None:
                 pHead = pNext
             else:
