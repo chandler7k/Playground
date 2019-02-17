@@ -50,6 +50,62 @@ let fSJ21 = MyClassSLJ.methodSL // class func methodSL
 
 let fSJ1 = MyClassSLJ.methodSL
 
+// 单例
+class MyClassDL{
+    class var sharedManager: MyClassDL{
+        struct Static{
+            static let sharedInstance: MyClassDL = MyClassDL()
+        }
+        return Static.sharedInstance
+    }
+}
+
+// 写法2
+// 这种写法主要是swift1.2的时候没有存储属性，所以把sharedInstance放到外面
+// 但是要注意访问权限，应该把sharedInstance限制在当前文件，所以设置为private
+//private let sharedInsteanceDL2 = MyClassDL2() 报错 现在不支持了
+//class MyClassDL2{
+//    class var sharedManager: MyClassDL2{
+//        return sharedInsteanceDL2
+//    }
+//}
+
+// 当前
+// swift当前版本的let在底层会把初始化包装在一个 dispatch_once_block_invoke 中
+// 对于所有全局变量，swift都会使用dispatch_once_block_invoke
+// 而且这里有一个private init，不公开初始化方法，只能通过单例实现，也保证力实例的唯一性
+// 如果需要类似default的单例，也可以把private移除。
+class MyManager{
+    let sharedManager = MyManager()
+    private init() {
+        
+    }
+}
+
+
+// 条件编译
+#if os(macOS)
+    typealias Color = NSColor
+#else
+    typealias Color = UIColor
+#endif
+
+
+// 编译标志
+// MARK： - hello
+// TODO: fix bug
+// FIXME: fix
+//尚且不支持 WARNING: FIX API HERE
+
+// @UIApplicationMain
+// C语言程序以main入口
+// swift没有main，但是在AppDelagate内有@UIApplicationMain标记
+// 编译的时候会寻找这个标记，然后自动插入main函数
+// 如果要自定义main，就删除标记，然后创建main.swift 内部实现UIApplicationMain(Process.argv, Process.unsafeArgv, nil, NSStringFromClass(AppDelegate))
+// 第三个参数可以换成自己的UIApplication子类
+
+// @objc & dynamic
+
 
 
 
