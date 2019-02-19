@@ -30,6 +30,9 @@
     CATransform3D tranform2 = CATransform3DMakeRotation(-M_PI_4, 0, 1, 0);
     self.layerView2.layer.transform = tranform2;
     
+    self.layerView2.layer.transform = tranform2;
+    
+    
     
 }
 
