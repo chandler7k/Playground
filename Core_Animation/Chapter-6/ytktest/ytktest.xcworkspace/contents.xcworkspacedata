@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:/Users/zouhuanlin/Documents/GitHub/Playground/Core_Animation/Chapter-6/ytktest/ytktest/BDRequest.h">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/zouhuanlin/Documents/GitHub/Playground/Core_Animation/Chapter-6/ytktest/ytktest/BDRequest.m">
+   </FileRef>
+   <FileRef
+      location = "group:ytktest.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Pods/Pods.xcodeproj">
+   </FileRef>
+</Workspace>
