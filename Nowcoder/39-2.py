@@ -4,14 +4,21 @@ class Solution:
         # write code here
         if len(numbers) <=0:
             return
-        d = {}
-        res = 0
+        res = numbers[0]
+        num = 0
         for i in numbers:
-            if i in d:
-                d[i] += 1
-            else:
-                d[i] = 1
-        for j in d:
-            if d[j] > (len(numbers) / 2):
-                res = j
-        return res
+            if num == 0:
+                num += 1
+                res = i
+            elif num != 0 and res != i:
+                num -= 1
+            elif num != 0 and res == i:
+                num += 1
+        count = 0
+        for i in numbers:
+            if i == res:
+                count += 1
+        if count > len(numbers) / 2:
+            return res
+        else:
+            return 0
