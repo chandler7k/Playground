@@ -37,12 +37,12 @@ case .west:
 // swift enum 要求覆盖所有枚举成员，这样可以保证枚举成员不会被意外漏掉
 
 //let somePoint = Planet.earth
-switch somePoint {
-case .earth:
-    print("mother planet")
-default:
-    print("not a safe place")
-}
+//switch somePoint {
+//case .earth:
+//    print("mother planet")
+//default:
+//    print("not a safe place")
+//}
 
 enum Beverage: CaseIterable{
     case coffee, tea, juice

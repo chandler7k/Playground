@@ -108,6 +108,52 @@ class MyManager{
 
 
 
+protocol Ape2{
+    
+    func method1() -> String
+}
+
+extension Ape2{
+    func method1() -> String{
+        return "hi"
+    }
+    
+    func method2() -> String{
+        return "hi"
+    }
+    
+    func method3() -> String{
+        return "mthod3"
+    }
+}
+
+
+struct B2: Ape2{
+    func method1() -> String {
+        return "hello"
+    }
+    
+    func method2() -> String {
+        return "hello"
+    }
+    
+}
+
+let b2 = B2()
+b2.method1()
+b2.method2()
+
+let a2 = b2 as Ape2
+a2.method1()
+a2.method2()
+a2.method3()
+
+
+func reverseString(_ s: inout [Character]) {
+    s = s.reversed()
+}
+
+
 
 
 
