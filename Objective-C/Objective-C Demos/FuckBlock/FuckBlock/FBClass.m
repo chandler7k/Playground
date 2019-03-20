@@ -9,5 +9,14 @@
 #import "FBClass.h"
 
 @implementation FBClass
+//@synthesize array = tarray;
+@synthesize array;
+@synthesize blockOne;
+- (NSArray *)array
+{
+    array = @[];
+    return array;
+    
+}
 
 @end
