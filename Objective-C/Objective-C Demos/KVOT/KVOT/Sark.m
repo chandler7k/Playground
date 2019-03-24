@@ -7,7 +7,6 @@
 //
 
 #import "Sark.h"
-
 @implementation Sark
 
 - (void)setName:(NSString *)name
@@ -26,4 +25,5 @@
     [super didChangeValueForKey:key];
     NSLog(@"did change value for key");
 }
+
 @end

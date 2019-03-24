@@ -101,7 +101,7 @@ class MyManager{
 // C语言程序以main入口
 // swift没有main，但是在AppDelagate内有@UIApplicationMain标记
 // 编译的时候会寻找这个标记，然后自动插入main函数
-// 如果要自定义main，就删除标记，然后创建main.swift 内部实现UIApplicationMain(Process.argv, Process.unsafeArgv, nil, NSStringFromClass(AppDelegate))
+// 如果要自定义main，就删除标记，然后创建main.swift 内部实现UIApplicationMain(CommandLine.argv, CommandLine.unsafeArgv, nil, NSStringFromClass(AppDelegate.self))
 // 第三个参数可以换成自己的UIApplication子类
 
 // @objc & dynamic
@@ -153,8 +153,142 @@ func reverseString(_ s: inout [Character]) {
     s = s.reversed()
 }
 
+// anyclass .self
+// AnyClass = AnyObject.Type 就是metaClass啊
+//class ATA{
+//    class func method(){
+//        print("hello")
+//    }
+//}
+//let typeATA: ATA.Type = ATA.self
+//// .Type用来获取metaClass
+//let ata = ATA()
+//print(ata.self)
+//let ataClass: AnyClass = ATA.self
+//
+//typeATA.method()
+
+//(ataClass as! ATA.Type).method()
+
+// protocol.Protocl作用相当于self用来获取元类型
+
+// protocol 中的Self就是指实现这个协议的类型，因为你没法得知是谁实现了这个协议
+// Self 也包括实现这个协议的类型的子类
+
+protocol Copyable{
+    func copy() -> Self
+}
+class MySelfClass: Copyable{
+    var num = 1
+    func copy() -> Self {
+        let res = type(of: self).init()
+        res.num = num
+        return res
+    }
+    
+    required init() {
+        
+    }
+}
+
+let sobject = MySelfClass()
+sobject.num = 100
+
+let newso = sobject.copy()
+sobject.num = 1
+print(sobject.num)
+print(newso.num)
 
 
 
+// @objc
+// 修饰的放方法或者属性并不会向OC中一样动态派发，依然是swift中的静态调用
+// 想要动态调用就需要dynamic修饰
+// NSObject的非private方法都是默认@objc的
 
 
+// 可选协议
+// 旧版本实现可选协议方法是在对应方法前面加@objc， 但这样protocol只能由类来实现。
+// 将不必实现的协议方法在协议的extension写出默认方法就行了
+
+protocol OptionalProtocol{
+    func optionalMehtod()
+    func necessaryMethod()
+    func anotherOptionalMethod()
+}
+
+extension OptionalProtocol{
+    func optionalMehtod(){
+        print("implemented in extention")
+    }
+    
+    func anotherOptionalMethod(){
+        print("another implemented in extension")
+    }
+}
+
+class OPProtocolClass: OptionalProtocol{
+    func necessaryMethod() {
+        print("implemented in class")
+    }
+    
+//    func optionalMehtod() {
+//        print("optional imp in class")
+//    }
+}
+
+let opproobj = OPProtocolClass()
+opproobj.necessaryMethod()
+opproobj.optionalMehtod()
+opproobj.anotherOptionalMethod()
+
+
+// 内存管理
+class ARCA: NSObject{
+    let b: ARCB
+    override init() {
+        b = ARCB()
+        super.init()
+        b.a = self
+    }
+    
+    deinit {
+        print("a deinit")
+    }
+    
+}
+
+class ARCB: NSObject{
+    weak var a: ARCA? = nil
+    deinit {
+        print("b deinit")
+    }
+}
+
+var arcObjA: ARCA? = ARCA()
+arcObjA = nil
+// unowned 设置以后即使他引用的内容已经释放了，但是仍然会保持一个对w已经释放对象的无效引用，它不能是Optional值，也不会指向nil
+// 官方建议确定不会被释放，尽量使用unowned，如果存在被释放的可能就用weak
+
+class ARCPerson{
+    let name: String
+    lazy var printName: () -> () = {
+        [unowned self] in
+        print("name is \(self.name)")
+    }
+    init(personName: String) {
+        name = personName
+    }
+    
+    deinit {
+        print("person is deinit")
+    }
+}
+
+var xiaoMing: ARCPerson? = ARCPerson(personName: "xiaoming")
+xiaoMing!.printName()
+//下面这种情况就是，将一个unowned self的闭包赋值给外部，然后将对象nil，再去调用的时候无法读取unowned直接崩溃
+//let arcblocktest = xiaoMing!.printName
+//xiaoMing = nil
+//arcblocktest()
+//Fatal error: Attempted to read an unowned reference but object 0x7ff32376b750 was already deallocated
