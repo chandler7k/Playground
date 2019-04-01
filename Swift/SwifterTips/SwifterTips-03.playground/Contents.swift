@@ -292,3 +292,42 @@ xiaoMing!.printName()
 //xiaoMing = nil
 //arcblocktest()
 //Fatal error: Attempted to read an unowned reference but object 0x7ff32376b750 was already deallocated
+var mut = DispatchSemaphore(value: 1)
+var empty = DispatchSemaphore(value: 7)
+var full = DispatchSemaphore(value: 3)
+var boxflag = [90,70,60]
+var flag = false
+func product(){
+    DispatchQueue.global(qos: .default).async {
+        while true {
+            mut.wait()
+            empty.wait()
+            boxflag.append(Int.random(in: 1...10))
+            
+            full.signal()
+            mut.signal()
+            print("\(boxflag.count)")
+        }
+    }
+}
+
+func consume(){
+    DispatchQueue.global(qos: .default).async {
+        while true {
+            if boxflag.count > 0{
+                mut.wait()
+                full.wait()
+                boxflag.removeLast()
+                
+                full.signal()
+                mut.signal()
+                print("\(boxflag.count)")
+            }
+        }
+    }
+    
+}
+product()
+consume()
+
+
