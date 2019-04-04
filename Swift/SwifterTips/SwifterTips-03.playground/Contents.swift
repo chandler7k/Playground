@@ -327,7 +327,9 @@ func consume(){
     }
     
 }
-product()
-consume()
+//product()
+//consume()
 
+print("\(7/2)")
+print("\(Double(7.0/2))")
 

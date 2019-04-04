@@ -18,6 +18,8 @@
 		96230DEE224BC30500C4F971 /* GCDManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 96230DED224BC30500C4F971 /* GCDManager.m */; };
 		96230DF12251B2B400C4F971 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 96230DF02251B2B400C4F971 /* Person.m */; };
 		96230DF42251B2D800C4F971 /* Person+BaseInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 96230DF32251B2D800C4F971 /* Person+BaseInfo.m */; };
+		96230DF722526D3000C4F971 /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = 96230DF622526D3000C4F971 /* Course.m */; };
+		96230DFA22526D5D00C4F971 /* VideoCourse.m in Sources */ = {isa = PBXBuildFile; fileRef = 96230DF922526D5D00C4F971 /* VideoCourse.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,10 @@
 		96230DF02251B2B400C4F971 /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		96230DF22251B2D800C4F971 /* Person+BaseInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Person+BaseInfo.h"; sourceTree = "<group>"; };
 		96230DF32251B2D800C4F971 /* Person+BaseInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Person+BaseInfo.m"; sourceTree = "<group>"; };
+		96230DF522526D3000C4F971 /* Course.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Course.h; sourceTree = "<group>"; };
+		96230DF622526D3000C4F971 /* Course.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Course.m; sourceTree = "<group>"; };
+		96230DF822526D5D00C4F971 /* VideoCourse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoCourse.h; sourceTree = "<group>"; };
+		96230DF922526D5D00C4F971 /* VideoCourse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoCourse.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +131,10 @@
 				96230DF02251B2B400C4F971 /* Person.m */,
 				96230DF22251B2D800C4F971 /* Person+BaseInfo.h */,
 				96230DF32251B2D800C4F971 /* Person+BaseInfo.m */,
+				96230DF522526D3000C4F971 /* Course.h */,
+				96230DF822526D5D00C4F971 /* VideoCourse.h */,
+				96230DF922526D5D00C4F971 /* VideoCourse.m */,
+				96230DF622526D3000C4F971 /* Course.m */,
 			);
 			path = FGCD;
 			sourceTree = "<group>";
@@ -277,6 +287,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96230DFA22526D5D00C4F971 /* VideoCourse.m in Sources */,
+				96230DF722526D3000C4F971 /* Course.m in Sources */,
 				96230DEE224BC30500C4F971 /* GCDManager.m in Sources */,
 				96230DF42251B2D800C4F971 /* Person+BaseInfo.m in Sources */,
 				96230DBF224BBAEA00C4F971 /* ViewController.m in Sources */,

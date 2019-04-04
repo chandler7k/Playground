@@ -40,7 +40,6 @@
         });
     }
     
-    dispatch_queue_t mainqueue = dispatch_get_main_queue();
     dispatch_queue_t globalQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     dispatch_time_t time = dispatch_time(DISPATCH_TIME_NOW, 3ull *NSEC_PER_SEC);
     dispatch_after(time, dispatch_get_main_queue(), ^{
@@ -82,15 +81,16 @@
     
     dispatch_queue_t semqueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     dispatch_semaphore_t semaphore = dispatch_semaphore_create(1);
-    NSMutableArray *array = [[NSMutableArray alloc] init];
+    NSMutableArray *array = [NSMutableArray array];
     for(int i = 0;i < 1000;i ++){
-        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
-        [array addObject:[NSNumber numberWithInt:i]];
-        
-        dispatch_semaphore_signal(semaphore);
-        
+        dispatch_async(semqueue, ^{
+            dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+            [array addObject:[NSNumber numberWithInt:i]];
+            dispatch_semaphore_signal(semaphore);
+        });
     }
     NSLog(@"%@",array);
+    
     
     NSOperationQueue *operationQueue = [[NSOperationQueue alloc] init];
     operationQueue.maxConcurrentOperationCount = 3;
