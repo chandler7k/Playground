@@ -33,25 +33,10 @@ class Solution:
         # write code here
         if len(s) == 0:
             return 
-        originLength = len(s)
-        numberOfBlank = 0
+        res = ""
         for i in s:
-            if i == '\0':
-                numberOfBlank += 1
-        newLength = originLength + numberOfBlank * 2
-        s += ' ' * numberOfBlank * 2
-        indexOfOrigin = originLength
-        indexOfNew = newLength
-        while indexOfOrigin >= 0 and indexOfNew > indexOfOrigin:
-            if s[indexOfOrigin] == '\0':
-                s[indexOfNew] = '0'
-                indexOfNew -= 1
-                s[indexOfNew] = '2'
-                indexOfNew -= 1
-                s[indexOfNew] = '%'
-                indexOfNew -= 1
+            if i == ' ':
+                res += '%20'
             else:
-                s[indexOfNew] = s[indexOfOrigin]
-                indexOfNew -= 1
-            indexOfOrigin -= 1
-        return s
+                res += i
+        return res
