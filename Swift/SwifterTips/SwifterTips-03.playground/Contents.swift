@@ -1,4 +1,4 @@
-//import Cocoa
+import Cocoa
 //
 //var str = "Hello, playground"
 //// Selector
@@ -337,19 +337,56 @@
 //
 //
 //
+// 打印数组排列组合最小的值
+//func printMinNumber(array: [Int]){
+//    var array = array
+//    array.sort { (x: Int, y: Int) -> Bool in
+//        return Int(String(x)+String(y))! < Int(String(y)+String(x))!
+//    }
+//    var res = ""
+//    for i in array{
+//        res += String(i)
+//    }
+//    print(array)
+//    print(res)
+//}
+//print("hello")
+//
+//printMinNumber(array: [9,21,123])
 
-func printMinNumber(array: [Int]){
-    var array = array
-    array.sort { (x: Int, y: Int) -> Bool in
-        return Int(String(x)+String(y))! < Int(String(y)+String(x))!
-    }
-    var res = ""
-    for i in array{
-        res += String(i)
-    }
-    print(array)
-    print(res)
+// autorelease
+// 尽量使用初始化方法去生成Data或者Image，目前的Swift版本已经取消了大部分autorelease API，所以还是很安全的
+
+// 值类型和引用类型
+class MyRefClass{
+    var num = 0
 }
-print("hello")
 
-printMinNumber(array: [9,21,123])
+var myrefObj = MyRefClass()
+var a = [myrefObj]
+var b = a
+b.append(myrefObj)
+
+myrefObj.num = 100
+
+print(b[0].num)
+print(b[1].num)
+
+// 频繁操作尽然推荐使用 NSMutableArray 和 NSMutableDictionary
+// 目标容器小的情况下再用Swift 自身的 Array 和 Dictionary？？？
+
+// unsafepointer
+func unsafeMethod(_ num: UnsafePointer<CInt>){
+    print(num.pointee)
+}
+
+var unsafea: CInt = 123
+unsafeMethod(&unsafea)
+
+let unsafeArr = NSArray(object: "meow")
+let unsafestr = unsafeBitCast(CFArrayGetValueAtIndex(unsafeArr, 0), to: CFString.self)
+
+// unsafepointer 并不会自动管理内存，就算对象nile了，也依然存在内存中
+// 应该把他们deinitialize和deallocate，释放指针指向和指针自己本身
+
+
