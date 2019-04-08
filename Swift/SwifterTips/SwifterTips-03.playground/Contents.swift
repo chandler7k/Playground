@@ -390,3 +390,41 @@ let unsafestr = unsafeBitCast(CFArrayGetValueAtIndex(unsafeArr, 0), to: CFString
 // 应该把他们deinitialize和deallocate，释放指针指向和指针自己本身
 
 
+//public struct UnsafeMutablePointer<Memory>{
+//    init(_ other: COpaquePointer) {
+//
+//    }
+//}
+
+
+// GCD
+let workingQueue = DispatchQueue(label: "my_queue")
+
+workingQueue.async {
+    print("work hard")
+    Thread.sleep(forTimeInterval: 2)
+    
+    DispatchQueue.main.async {
+        print("work done, update UI")
+    }
+}
+
+// result
+
+enum AnErrorType: Error{
+    case failuerReason1
+    case failureReason2
+}
+
+func failableFunction(num: Int) -> Result<Bool, AnErrorType>{
+    if num == 2{
+        return .failure(.failuerReason1)
+    }else if num == 1{
+        return .failure(.failureReason2)
+    }
+    return .success(true)
+    
+}
+
+print(failableFunction(num: 4))
+
