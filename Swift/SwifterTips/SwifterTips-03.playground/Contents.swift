@@ -358,73 +358,151 @@ import Cocoa
 // 尽量使用初始化方法去生成Data或者Image，目前的Swift版本已经取消了大部分autorelease API，所以还是很安全的
 
 // 值类型和引用类型
-class MyRefClass{
-    var num = 0
-}
-
-var myrefObj = MyRefClass()
-var a = [myrefObj]
-var b = a
-b.append(myrefObj)
-
-myrefObj.num = 100
-
-print(b[0].num)
-print(b[1].num)
-
-// 频繁操作尽然推荐使用 NSMutableArray 和 NSMutableDictionary
-// 目标容器小的情况下再用Swift 自身的 Array 和 Dictionary？？？
-
-// unsafepointer
-func unsafeMethod(_ num: UnsafePointer<CInt>){
-    print(num.pointee)
-}
-
-var unsafea: CInt = 123
-unsafeMethod(&unsafea)
-
-let unsafeArr = NSArray(object: "meow")
-let unsafestr = unsafeBitCast(CFArrayGetValueAtIndex(unsafeArr, 0), to: CFString.self)
-
-// unsafepointer 并不会自动管理内存，就算对象nile了，也依然存在内存中
-// 应该把他们deinitialize和deallocate，释放指针指向和指针自己本身
-
-
-//public struct UnsafeMutablePointer<Memory>{
-//    init(_ other: COpaquePointer) {
+//class MyRefClass{
+//    var num = 0
+//}
 //
+//var myrefObj = MyRefClass()
+//var a = [myrefObj]
+//var b = a
+//b.append(myrefObj)
+//
+//myrefObj.num = 100
+//
+//print(b[0].num)
+//print(b[1].num)
+//
+//// 频繁操作尽然推荐使用 NSMutableArray 和 NSMutableDictionary
+//// 目标容器小的情况下再用Swift 自身的 Array 和 Dictionary？？？
+//
+//// unsafepointer
+//func unsafeMethod(_ num: UnsafePointer<CInt>){
+//    print(num.pointee)
+//}
+//
+//var unsafea: CInt = 123
+//unsafeMethod(&unsafea)
+//
+//let unsafeArr = NSArray(object: "meow")
+//let unsafestr = unsafeBitCast(CFArrayGetValueAtIndex(unsafeArr, 0), to: CFString.self)
+//
+//// unsafepointer 并不会自动管理内存，就算对象nile了，也依然存在内存中
+//// 应该把他们deinitialize和deallocate，释放指针指向和指针自己本身
+//
+//
+////public struct UnsafeMutablePointer<Memory>{
+////    init(_ other: COpaquePointer) {
+////
+////    }
+////}
+//
+//
+//// GCD
+//let workingQueue = DispatchQueue(label: "my_queue")
+//
+//workingQueue.async {
+//    print("work hard")
+//    Thread.sleep(forTimeInterval: 2)
+//
+//    DispatchQueue.main.async {
+//        print("work done, update UI")
 //    }
 //}
+//
+//// result
+//
+//enum AnErrorType: Error{
+//    case failuerReason1
+//    case failureReason2
+//}
+//
+//func failableFunction(num: Int) -> Result<Bool, AnErrorType>{
+//    if num == 2{
+//        return .failure(.failuerReason1)
+//    }else if num == 1{
+//        return .failure(.failureReason2)
+//    }
+//    return .success(true)
+//
+//}
+//
+//print(failableFunction(num: 4))
+//
+//let queue = DispatchQueue(label: "com.example.queue")
+//
+//enum EntropyError: Error{
+//    case entropyDepleted
+//}
+//
+//struct AsyncRandomGenerator{
+//    static let entropyLimit = 5
+//    var count = 0
+//
+//    mutating func fetchRemoteRandomNumber(completion: @escaping (Result<Int, EntropyError>) -> Void){
+//        let result: Result<Int, EntropyError>
+//        if count < AsyncRandomGenerator.entropyLimit{
+//            result = .success(Int.random(in: 1...100))
+//        }else{
+//            result = .failure(.entropyDepleted)
+//        }
+//        count += 1
+//        queue.asyncAfter(deadline: .now() + 2) {
+//            completion(result)
+//        }
+//    }
+//}
+//
+//var generator = AsyncRandomGenerator()
+//(0..<AsyncRandomGenerator.entropyLimit + 1).forEach { i in
+//    print("this is the \(i)")
+//    generator.fetchRemoteRandomNumber(completion: { (result) in
+//        switch result {
+//        case .success(let number):
+//            print(number)
+//        case .failure(let error):
+//            print("source of randomess failed: \(error)")
+//        }
+//    })
+//}
+//
+//
+//print("waiting on some numbers")
+//dispatchMain()
 
 
-// GCD
-let workingQueue = DispatchQueue(label: "my_queue")
-
-workingQueue.async {
-    print("work hard")
-    Thread.sleep(forTimeInterval: 2)
+// extension hirach
+class exHi{
+    var name = ""
+    init() {
+        
+    }
     
-    DispatchQueue.main.async {
-        print("work done, update UI")
+    @objc private func sayWTF(){
+        print("wtf")
+    }
+    
+}
+
+extension exHi{
+    func sayname(){
+        print(self.name)
+        sayWTF()
     }
 }
 
-// result
-
-enum AnErrorType: Error{
-    case failuerReason1
-    case failureReason2
-}
-
-func failableFunction(num: Int) -> Result<Bool, AnErrorType>{
-    if num == 2{
-        return .failure(.failuerReason1)
-    }else if num == 1{
-        return .failure(.failureReason2)
+class sonexHi: exHi{
+    override init() {
+        
     }
-    return .success(true)
-    
 }
 
-print(failableFunction(num: 4))
+let sehi = sonexHi()
+sehi.name = "hello world"
+sehi.sayname()
 
+// next :
+let timer: TimeInterval = 2.0
+
+DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + timer) {
+    print("output after 2 secs")
+}
