@@ -471,38 +471,61 @@ import Cocoa
 
 
 // extension hirach
-class exHi{
-    var name = ""
-    init() {
-        
-    }
-    
-    @objc private func sayWTF(){
-        print("wtf")
-    }
-    
+//class exHi{
+//    var name = ""
+//    init() {
+//
+//    }
+//
+//    @objc private func sayWTF(){
+//        print("wtf")
+//    }
+//
+//}
+//
+//extension exHi{
+//    func sayname(){
+//        print(self.name)
+//        sayWTF()
+//    }
+//}
+//
+//class sonexHi: exHi{
+//    override init() {
+//
+//    }
+//}
+//
+//let sehi = sonexHi()
+//sehi.name = "hello world"
+//sehi.sayname()
+//
+//// next :
+//let timer: TimeInterval = 2.0
+//
+//DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + timer) {
+//    print("output after 2 secs")
+//}
+//
+//
+//DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + timer) {
+//    print("out put after 2 secs")
+//}
+//
+//
+//DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()) {
+//    print("out put after 2 secs")
+//}
+
+
+class Buffer{
+    var test: [Int] = []
 }
 
-extension exHi{
-    func sayname(){
-        print(self.name)
-        sayWTF()
-    }
+enum TaggedPointer{
+    case buffer(Buffer)
+    case inline(Int64)
 }
 
-class sonexHi: exHi{
-    override init() {
-        
-    }
-}
-
-let sehi = sonexHi()
-sehi.name = "hello world"
-sehi.sayname()
-
-// next :
-let timer: TimeInterval = 2.0
-
-DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + timer) {
-    print("output after 2 secs")
-}
+print(MemoryLayout<TaggedPointer>.size)
+print(MemoryLayout<TaggedPointer>.alignment)
