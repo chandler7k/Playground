@@ -527,6 +527,7 @@ enum TaggedPointer{
     case inline(Int64)
 }
 
+
 //print(MemoryLayout<TaggedPointer>.size)
 //print(MemoryLayout<TaggedPointer>.alignment)
 
@@ -588,3 +589,46 @@ let controller = Controller()
 
 controller.bind1()
 //controller.viewModel.loadData()
+
+print(MemoryLayout<TaggedPointer>.size)
+print(MemoryLayout<TaggedPointer>.alignment)
+
+typealias Task = (_ cancel: Bool) -> Void
+
+func delay(_ time: TimeInterval, task: @escaping () -> ()) -> Task?{
+    func dispatch_later(block: @escaping () -> ()){
+        let t = DispatchTime.now()
+        DispatchQueue.main.asyncAfter(deadline: t, execute: block)
+    }
+    var closure:(() -> Void)? = task
+    var result: Task?
+    
+    let delayedClosure: Task = {
+        cancel in
+        if let internalColsure = closure{
+            if(cancel == false){
+                DispatchQueue.main.async(execute: internalColsure)
+            }
+        }
+        closure = nil
+        result = nil
+    }
+    
+    
+    result = delayedClosure
+    dispatch_later {
+        if let delayedClosure = result{
+            delayedClosure(false)
+        }
+    }
+    
+    return result
+}
+func cancel(_ task: Task?){
+    task?(true)
+}
+
+let task = delay(0){print("call 911")}
+cancel(task)
+
+
