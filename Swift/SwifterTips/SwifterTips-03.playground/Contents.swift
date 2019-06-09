@@ -527,5 +527,64 @@ enum TaggedPointer{
     case inline(Int64)
 }
 
-print(MemoryLayout<TaggedPointer>.size)
-print(MemoryLayout<TaggedPointer>.alignment)
+//print(MemoryLayout<TaggedPointer>.size)
+//print(MemoryLayout<TaggedPointer>.alignment)
+
+func makeInerement(forIncrement amout: Int) -> () -> (Int){
+    var total = 0
+    
+    let increment: () -> (Int) = {
+        total += amout
+        return total
+    }
+    total += 1
+    return increment
+}
+
+let incrementBy10 = makeInerement(forIncrement: 10)
+// increment捕获了total和amout，amakeincrement返回后这俩的作用域本该结束但是被incrementBy10捕获，所以仍然存在
+print(incrementBy10())
+print(incrementBy10())
+
+
+class ViewModel{
+    private var callBack: (() -> Void)?
+    
+    func whenDataLoaded(_ callback: @escaping () -> Void){
+        self.callBack = callback
+    }
+    
+    func loadData(){
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            if let cb = self.callBack{cb()}
+        }
+    }
+    
+    deinit {
+        print("viewModel deinit")
+    }
+}
+
+
+class Controller{
+    let viewModel = ViewModel()
+    func bind1() {
+        viewModel.whenDataLoaded {
+            self.reloadUI()
+        }
+    }
+    
+    func reloadUI(){
+        self.viewModel.loadData()
+        print("load data")
+    }
+    
+    deinit {
+        print("controller deinit")
+    }
+}
+
+let controller = Controller()
+
+controller.bind1()
+//controller.viewModel.loadData()
