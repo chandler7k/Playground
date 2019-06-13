@@ -548,87 +548,97 @@ print(incrementBy10())
 print(incrementBy10())
 
 
-class ViewModel{
-    private var callBack: (() -> Void)?
+//class ViewModel{
+//    private var callBack: (() -> Void)?
+//
+//    func whenDataLoaded(_ callback: @escaping () -> Void){
+//        self.callBack = callback
+//    }
+//
+//    func loadData(){
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+//            if let cb = self.callBack{cb()}
+//        }
+//    }
+//
+//    deinit {
+//        print("viewModel deinit")
+//    }
+//}
+//
+//
+//class Controller{
+//    let viewModel = ViewModel()
+//    func bind1() {
+//        viewModel.whenDataLoaded {
+//            self.reloadUI()
+//        }
+//    }
+//
+//    func reloadUI(){
+//        self.viewModel.loadData()
+//        print("load data")
+//    }
+//
+//    deinit {
+//        print("controller deinit")
+//    }
+//}
+//
+//let controller = Controller()
+//
+//controller.bind1()
+////controller.viewModel.loadData()
+//
+//print(MemoryLayout<TaggedPointer>.size)
+//print(MemoryLayout<TaggedPointer>.alignment)
+//
+//typealias Task = (_ cancel: Bool) -> Void
+//
+//func delay(_ time: TimeInterval, task: @escaping () -> ()) -> Task?{
+//    func dispatch_later(block: @escaping () -> ()){
+//        let t = DispatchTime.now()
+//        DispatchQueue.main.asyncAfter(deadline: t, execute: block)
+//    }
+//    var closure:(() -> Void)? = task
+//    var result: Task?
+//
+//    let delayedClosure: Task = {
+//        cancel in
+//        if let internalColsure = closure{
+//            if(cancel == false){
+//                DispatchQueue.main.async(execute: internalColsure)
+//            }
+//        }
+//        closure = nil
+//        result = nil
+//    }
+//
+//
+//    result = delayedClosure
+//    dispatch_later {
+//        if let delayedClosure = result{
+//            delayedClosure(false)
+//        }
+//    }
+//
+//    return result
+//}
+//func cancel(_ task: Task?){
+//    task?(true)
+//}
+//
+//let task = delay(0){print("call 911")}
+//cancel(task)
+//
+
+let workingQueue = DispatchQueue(label: "my_queue")
+
+workingQueue.async {
+    print("work hard")
+    Thread.sleep(forTimeInterval: 2)
     
-    func whenDataLoaded(_ callback: @escaping () -> Void){
-        self.callBack = callback
-    }
-    
-    func loadData(){
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            if let cb = self.callBack{cb()}
-        }
-    }
-    
-    deinit {
-        print("viewModel deinit")
+    DispatchQueue.main.async {
+        print("work done")
     }
 }
-
-
-class Controller{
-    let viewModel = ViewModel()
-    func bind1() {
-        viewModel.whenDataLoaded {
-            self.reloadUI()
-        }
-    }
-    
-    func reloadUI(){
-        self.viewModel.loadData()
-        print("load data")
-    }
-    
-    deinit {
-        print("controller deinit")
-    }
-}
-
-let controller = Controller()
-
-controller.bind1()
-//controller.viewModel.loadData()
-
-print(MemoryLayout<TaggedPointer>.size)
-print(MemoryLayout<TaggedPointer>.alignment)
-
-typealias Task = (_ cancel: Bool) -> Void
-
-func delay(_ time: TimeInterval, task: @escaping () -> ()) -> Task?{
-    func dispatch_later(block: @escaping () -> ()){
-        let t = DispatchTime.now()
-        DispatchQueue.main.asyncAfter(deadline: t, execute: block)
-    }
-    var closure:(() -> Void)? = task
-    var result: Task?
-    
-    let delayedClosure: Task = {
-        cancel in
-        if let internalColsure = closure{
-            if(cancel == false){
-                DispatchQueue.main.async(execute: internalColsure)
-            }
-        }
-        closure = nil
-        result = nil
-    }
-    
-    
-    result = delayedClosure
-    dispatch_later {
-        if let delayedClosure = result{
-            delayedClosure(false)
-        }
-    }
-    
-    return result
-}
-func cancel(_ task: Task?){
-    task?(true)
-}
-
-let task = delay(0){print("call 911")}
-cancel(task)
-
-
