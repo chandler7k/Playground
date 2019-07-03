@@ -2,7 +2,7 @@
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
-      <config projectName="ControlFlow" targetName="ControlFlow" />
+      <config projectName="ForFlow" targetName="ForFlow" />
     </generated>
   </component>
   <component name="CMakeSettings">
@@ -11,24 +11,15 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fa6e809b-8a01-43a5-a9fb-9a715c08b6a1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../1-5Class/.idea/1-5Class.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../1-5Class/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../1-5Class/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../1-5Class/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../1-5Class/Sales_item.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../1-5Class/Sales_item.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ForFlow/.idea/ForFlow.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ForFlow/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ForFlow/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ForFlow/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ForFlow/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ForFlow/CMakeLists.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ForFlow/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ControlFlow.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ControlFlow.dir/main.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/ControlFlow" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/ControlFlow" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+    <list default="true" id="bb6acde4-5e23-4122-ab22-1771604e15c5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/ForFlow.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ControlFlow/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ControlFlow/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -51,8 +42,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="314">
-              <caret line="27" column="5" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
+            <state relative-caret-position="200">
+              <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -70,11 +61,11 @@
     </option>
   </component>
   <component name="MacroExpansionManager">
-    <option name="directoryName" value="WfhzcVrN" />
+    <option name="directoryName" value="UeYPtDEU" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1704" />
-    <option name="y" value="64" />
+    <option name="x" value="-1751" />
+    <option name="y" value="68" />
     <option name="width" value="1440" />
     <option name="height" value="900" />
   </component>
@@ -107,7 +98,7 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="ControlFlow" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ControlFlow" TARGET_NAME="ControlFlow" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ControlFlow" RUN_TARGET_NAME="ControlFlow">
+    <configuration name="ForFlow" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ForFlow" TARGET_NAME="ForFlow" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ForFlow" RUN_TARGET_NAME="ForFlow">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -118,21 +109,20 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="fa6e809b-8a01-43a5-a9fb-9a715c08b6a1" name="Default Changelist" comment="" />
-      <created>1562067642533</created>
+      <changelist id="bb6acde4-5e23-4122-ab22-1771604e15c5" name="Default Changelist" comment="" />
+      <created>1562138563929</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1562067642533</updated>
-      <workItem from="1562067643864" duration="3312000" />
+      <updated>1562138563929</updated>
+      <workItem from="1562138565603" duration="918000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3312000" />
+    <option name="totallyTimeSpent" value="918000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1704" y="64" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
+    <frame x="-1751" y="68" width="1440" height="900" extended-state="0" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24964234" />
@@ -145,7 +135,7 @@
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32920793" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32920793" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -166,8 +156,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="27" column="5" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
+        <state relative-caret-position="200">
+          <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
         </state>
       </provider>
     </entry>

@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/zouhuanlin/Documents/GitHub/Playground/cppprimer/Chapter-1/1-5Class/cmake-build-debug/Sales_item.cpp
+Sales_item.h
+/Users/zouhuanlin/Documents/GitHub/Playground/cppprimer/Chapter-1/1-5Class/cmake-build-debug/Sales_item.h
+
+/Users/zouhuanlin/Documents/GitHub/Playground/cppprimer/Chapter-1/1-5Class/cmake-build-debug/Sales_item.h
+
+/Users/zouhuanlin/Documents/GitHub/Playground/cppprimer/Chapter-1/1-5Class/main.cpp
+iostream
+-
+

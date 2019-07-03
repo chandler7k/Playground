@@ -17,5 +17,15 @@ int main() {
         cout << val-- <<endl;
     }
     cout << "sum of 1 to 10 is " << sum++ << endl;
+
+    cout << "======" << endl;
+
+    int value = 0;
+    sum = 0;
+
+    while (cin >> value){
+        sum += value;
+    }
+    cout << "value is :" << sum << endl;
     return 0;
 }

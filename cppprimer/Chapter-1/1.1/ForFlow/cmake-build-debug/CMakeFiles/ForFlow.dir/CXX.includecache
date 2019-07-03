@@ -1,0 +1,12 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/zouhuanlin/Documents/GitHub/Playground/cppprimer/Chapter-1/1.1/ForFlow/main.cpp
+iostream
+-
+
