@@ -1,0 +1,6 @@
+framework module Pods_RXStartTests {
+  umbrella header "Pods-RXStartTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

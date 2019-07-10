@@ -11,7 +11,15 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="28a51e2e-1760-4f10-83c9-8ad8b40c772f" name="Default Changelist" comment="" />
+    <list default="true" id="28a51e2e-1760-4f10-83c9-8ad8b40c772f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1.1/ControlFlow/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../1.1/ControlFlow/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1.1/IfSection/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../1.1/IfSection/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Chapter-2/2-2Var/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Chapter-2/2-2Var/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Chapter-2/2-2Var/cmake-build-debug/2_2Var" beforeDir="false" afterPath="$PROJECT_DIR$/../../Chapter-2/2-2Var/cmake-build-debug/2_2Var" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Chapter-2/2-2Var/cmake-build-debug/CMakeFiles/2_2Var.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../../Chapter-2/2-2Var/cmake-build-debug/CMakeFiles/2_2Var.dir/main.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Chapter-2/2-2Var/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../Chapter-2/2-2Var/main.cpp" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -68,8 +76,8 @@
     <option name="directoryName" value="dEMFgHfZ" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1704" />
-    <option name="y" value="64" />
+    <option name="x" value="2136" />
+    <option name="y" value="34" />
     <option name="width" value="1440" />
     <option name="height" value="900" />
   </component>
@@ -134,15 +142,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1562153901210</updated>
-      <workItem from="1562153902546" duration="1106000" />
+      <workItem from="1562153902546" duration="1312000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1106000" />
+    <option name="totallyTimeSpent" value="1312000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1704" y="64" width="1440" height="900" extended-state="0" />
+    <frame x="2136" y="34" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
@@ -156,7 +164,7 @@
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32920793" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32920793" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
