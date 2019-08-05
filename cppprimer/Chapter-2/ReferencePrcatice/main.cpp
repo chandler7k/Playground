@@ -27,6 +27,9 @@ decltype(cj) y = x;
 
 //decltype(cj) z; error :z是引用，引用必须初始化
 
+
+
+
 int main() {
     cout << "===========================" << endl;
     int ival = 1024;
