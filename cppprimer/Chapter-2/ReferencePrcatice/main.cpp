@@ -6,9 +6,26 @@ constexpr int *constPrt = nullptr; // 顶部const
 typedef double wages;
 using hello = double ;
 using hptr = double*;
+
 int (^myblock)(int) = ^(int num){
     return num * num;
 };
+
+int foo(){
+    return 1;
+}
+
+//int x = 1;
+//decltype(foo()) sum = x;
+
+// decltype
+const int ci = 0, &cj = ci;
+
+decltype(ci) x = 0;
+
+decltype(cj) y = x;
+
+//decltype(cj) z; error :z是引用，引用必须初始化
 
 int main() {
     cout << "===========================" << endl;
@@ -74,5 +91,30 @@ int main() {
 
     const int aci = 0;
     const auto f = aci;
+    auto *autptr = &aci;
+    cout << "===========================" << endl;
+    // 顶层Const指针必须初始化
+    int noConstInt = 10;
+    const int constInt = 10;
+    int *const constPtr = &noConstInt;
+
+    // 底层const指针不必初始化
+    const int *lowLevelConstPrt;
+    cout << *lowLevelConstPrt << endl;
+
+    const int *lowlevelNullConstrPtr = nullptr;
+    cout << *lowlevelNullConstrPtr << endl;
+
+
+    int &nullRef = noConstInt;
+    // 引用的const都是底层const，const int&可以绑定普通int上。
+    const int &constNullRef = noConstInt;
+
+    int deci = 42, *decp = &deci, &decr = deci;
+    cout << decr << " " << &decr << endl;
+
+    decltype(decr+0) b;
+
+
     return 0;
 }
