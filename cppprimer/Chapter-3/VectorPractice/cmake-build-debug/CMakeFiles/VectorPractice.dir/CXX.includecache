@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/zouhuanlin/Documents/GitHub/Playground/cppprimer/Chapter-3/VectorPractice/main.cpp
+iostream
+-
+vector
+-
+string
+-
+
