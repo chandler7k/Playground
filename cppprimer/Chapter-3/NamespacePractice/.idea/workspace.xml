@@ -13,6 +13,8 @@
   <component name="ChangeListManager">
     <list default="true" id="0468a765-d9d8-48c7-8a31-66cbd5df29cf" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../VectorPractice/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../VectorPractice/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VectorPractice/cmake-build-debug/CMakeFiles/VectorPractice.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../VectorPractice/cmake-build-debug/CMakeFiles/VectorPractice.dir/main.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VectorPractice/cmake-build-debug/VectorPractice" beforeDir="false" afterPath="$PROJECT_DIR$/../VectorPractice/cmake-build-debug/VectorPractice" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../VectorPractice/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../VectorPractice/main.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
@@ -36,7 +38,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
+            <state relative-caret-position="576">
               <caret line="97" column="1" lean-forward="true" selection-start-line="97" selection-start-column="1" selection-end-line="97" selection-end-column="1" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
@@ -71,8 +73,9 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="y" value="173" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="141" />
+    <option name="y" value="90" />
     <option name="width" value="1440" />
     <option name="height" value="836" />
   </component>
@@ -129,7 +132,7 @@
     <option name="totallyTimeSpent" value="9398000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="173" width="1440" height="836" extended-state="0" />
+    <frame x="0" y="23" width="1440" height="836" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
@@ -143,7 +146,7 @@
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32258064" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32258064" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39919356" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -164,7 +167,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
+        <state relative-caret-position="576">
           <caret line="97" column="1" lean-forward="true" selection-start-line="97" selection-start-column="1" selection-end-line="97" selection-end-column="1" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
