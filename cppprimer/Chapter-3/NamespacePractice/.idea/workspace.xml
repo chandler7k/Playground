@@ -12,14 +12,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0468a765-d9d8-48c7-8a31-66cbd5df29cf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../VectorPractice/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../VectorPractice/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../VectorPractice/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../VectorPractice/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../VectorPractice/CMakeLists.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../VectorPractice/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Chapter-2/ReferencePrcatice/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Chapter-2/ReferencePrcatice/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Chapter-2/StructPractice/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Chapter-2/StructPractice/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VectorPractice/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../VectorPractice/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VectorPractice/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../VectorPractice/main.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -77,8 +71,8 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="203" />
+  <component name="ProjectFrameBounds">
+    <option name="y" value="173" />
     <option name="width" value="1440" />
     <option name="height" value="836" />
   </component>
@@ -93,6 +87,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -134,7 +129,7 @@
     <option name="totallyTimeSpent" value="9398000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="836" extended-state="6" />
+    <frame x="0" y="173" width="1440" height="836" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
