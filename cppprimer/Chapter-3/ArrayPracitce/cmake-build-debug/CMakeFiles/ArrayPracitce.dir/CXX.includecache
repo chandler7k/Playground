@@ -1,0 +1,12 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/zouhuanlin/Documents/GitHub/Playground/cppprimer/Chapter-3/ArrayPracitce/main.cpp
+iostream
+-
+
