@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h2>what js can do?</h2>
+        <p> js can change dom content</p>
+        <button type="button" onclick="document.getElementById('demo').innerHTML = 'hello \
+         js!'">fuck me!</button>
+        <button type="button" onclick="document.write(12+14)">document.write</button>
+        <button type="button" onclick="myfunction()">jsfunction</button>
+        <p id='demo'> test </p>
+        <p></p>
+        <button onclick="this.innerHTML = Date()"></button>
+        <script>
+            document.getElementById('demo').innerHTML = 6 + 5;
+            document.write(11 + 4);
+            console.log(12 + 14);
+            var x,y,z;
+            x = 22;
+            y = 11;
+            z = x + y;
+            // x = 'hello';
+            console.log('========================');
+            console.log(Math.pow(5,2));
+            var f23 = 5 ** 2;
+            console.log(f23);
+            var str = 'hello'
+
+            console.log('========================');
+            // 赋值
+            var fuzhileft = 6, fuzhiright = 1;
+            fuzhileft >>>= fuzhiright;
+            console.log(fuzhileft);
+            console.log('========================');
+            var cars = ['hello','world'];
+            var typestr = 'hello';
+            console.log(typeof(cars)); // cars是object
+            console.log(typeof(typestr));
+            console.log(typeof(1.5));
+            console.log(typeof(null));
+            console.log(typeof(undefined));
+
+            function myfunction(){
+                document.getElementById('demo').innerHTML = str + x + y + z;
+                document.getElementById('mydiv').innerHTML = 'fs !';
+            }
+
+            var daicanres = daicanMethod(3,5);
+            function daicanMethod(p1,p2){
+                return p1 * p2;
+            }
+            
+            console.log('========================');
+            console.log(daicanMethod('asdf',5));
+            console.log(daicanres); 
+            console.log('========================');
+            var person = {
+                name: 'bob',
+                age: 20,
+                name: function(){
+                    return this.name;
+                }
+            };
+            person.name;
+
+            var objstr = new String("bil");
+            console.log(typeof(objstr));
+
+            var str = "The full name of China is the People's Republic of China.";
+            var pos = str.lastIndexOf("China");
+            console.log(str.length);
+            console.log(pos);
+            console.log(''.length);
+            console.log(str.search('China'));
+            // document.getElementById("demo").innerHTML = pos;    
+        </script>
+    </body>
+</html>
