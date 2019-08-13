@@ -72,6 +72,234 @@
             console.log(''.length);
             console.log(str.search('China'));
             // document.getElementById("demo").innerHTML = pos;    
+            var conststr = '10';
+            var testnum = 20;
+            console.log(conststr + testnum);
+            console.log(testnum + conststr);
+
+            var nannum = NaN;
+            console.log(nannum);
+            console.log(typeof(NaN));
+            var transnum = 128;
+            console.log(transnum.toString(2));
+            console.log((1.98).toFixed(1));
+            console.log(Number("123124"));
+            var x = Number.MAX_VALUE;
+
+            var testNum = 10;
+            (function f(){
+                if(false){
+                    var testNum = 10;
+                    console.log("ge");
+                }
+                console.log(testNum);
+            }());
+
+
+            function f(){console.log('out')};
+            // (function(){
+            //     function f(); // undefined
+            //     if(false){
+            //         f = {
+            //             console.log('inside'); // log inside
+            //         }
+            //     }
+            //     f(); // 超出作用域 undefined;
+            // })
+
+            var fruites = ['a','b','c'];
+            // fruites.forEach({
+
+            // });
+
+            console.log(`asdfsadg
+            sadf
+            sadf`);
+            fruites.push('sadfg');
+            console.log(fruites);
+            fruites[7] = 'sadf';
+            console.log(fruites);
+            console.log(fruites[6]);
+            console.log(fruites.slice(0,3));
+            console.log(fruites.shift());
+            console.log(fruites);
+            console.log(fruites.unshift('new a'));
+            console.log(fruites);
+
+            var spliceArr = ['mic','apple','yahoo','aol','excite','sad5tasd'];
+            spliceArr.splice(2,3,'gsadf','fasdt');
+            console.log(spliceArr);
+            console.log(spliceArr.join('-'));
+            console.log('dick' in person);
+            console.log('name' in person);
+            console.log(person.hasOwnProperty('toString'));
+            // alert('test');
+
+            var m = new Map([['m',981],['n',34]]);
+            var s = new Set();
+            console.log(m.get('m'));
+            for(var x of m){
+                console.log(x);
+            }
+            var testinproarr = [1,2,3];
+            testinproarr.name = 'hello';
+            for(var x in testinproarr){
+                console.log(x);
+            }
+
+            testinproarr.forEach(function(index){
+                console.log(  ' ' + index);//第一个为值
+                // console.log(arrar);
+            });
+            var news = new Set(['a','b','c']);
+            news.forEach(function(element){
+                console.log(element);
+            });
+
+            var abs = function(x){
+                console.log(x);
+                console.log("print");
+            }
+
+            abs(2);
+
+            function fooargu(x){
+                for(var i = 0; i< arguments.length ;i++){
+                    console.log('arg' + i + ' ' + arguments[i]);
+                }
+            }
+            fooargu(1,2,3);
+
+
+            function fooRest(a,b,...rest){
+                console.log(a);
+                console.log(b);
+                console.log(rest);
+            }
+
+            fooRest(1,2,3,4,5,6);
+
+            console.log("=================");
+            function host1(){
+                var x = 'hello' + y;
+                console.log(x);
+                var y = 'bob';
+            }
+            host1();
+            var course = 'lear js';
+            // alert(course);
+            // alert(window.course);
+
+            window.host1();// 全局变量全都变成window的成员。
+
+            // namespace    
+            var MYAPP = {};
+            
+            function foo(){
+                var sum = 0;
+                // const sd = 3;
+                // sd = 3;
+                for(let i = 0; i< 100; i++){
+                    //
+                }
+                // console.log(i);
+            }
+
+            foo();
+
+            let [,, xl] = [1,2,3];
+            console.log(xl);
+
+            var persondis = {
+                name1:'esadf',
+                age1:12
+            };
+
+            var {nam23e,a23ge} = persondis;
+            console.log(nam23e + a23ge);
+            // var {name1,age1} = persondis;
+            // console.log(name1);
+            let {name1,age1:id} = persondis;
+            console.log(id);
+            
+            var pro1,pro2;
+            ({pro1,pro2} = {pro1: "hel", pro2:'sdf'});
+            ({pro1, pro2="sdaf"} = {pro1: "hel"});
+            console.log(pro1 + pro2);
+            [pro1,pro2] = [pro2,pro1];
+            console.log(pro1 + pro2);
+            var {hostname:domain, pathname: path} = location;
+            console.log(domain + path);
+            'use strict';
+            function getAge() {
+                var y = new Date().getFullYear();
+                return y - this.birth;
+            }
+
+            var xiaoming = {
+                name: '小明',
+                birth: 1990,
+                age: getAge
+            };
+
+            console.log(getAge.apply(xiaoming,[]));
+
+            // xiaoming.age(); // 25, 正常结果
+            // getAge(); // NaN
+            // var fn = xiaoming.age();
+            // console.log(typeof(fn));
+            // // fn();
+
+
+            // var persontest = {
+            //     name: 'sdf',
+            //     age: function(){
+            //         var that = this;
+            //         function getAgefunc(){
+            //             var y = new Date().getFullYear();
+            //             return y - that.birth;
+            //         }
+            //         return getAgefunc();
+            //     }
+            // }
+            // persontest.age();
+
+            function parin(){
+
+            }
+            var pcount = 0;
+            var oldparin = parin;
+            window.parin = function(){
+                pcount ++;
+                return oldparin.apply(null,arguments);
+            };
+            parin();
+            parin();
+            console.log(pcount);
+
+
+            // map reduce
+            var reduarr = [1,2,3];
+            var res = reduarr.reduce(function(x,y){
+                return x*y;
+            });
+            console.log(res);
+
+            var filterArr = [1,2,3,3,2,1,3,5,76,7];
+            var r = filterArr.filter(function(element,index,self){
+                return self.indexOf(element) == index;
+            });
+
+            console.log(r);
+
+            var rs = filterArr.sort(function(x,y){
+                return x < y ? -1 : 1;
+            });
+
+            console.log(rs);
+
+
+
         </script>
     </body>
 </html>
