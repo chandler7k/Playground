@@ -420,6 +420,55 @@
             });
             console.log(obj);
             console.log(JSON.stringify(obj));
+
+            var arr = [1,2,3];
+
+
+            // contructor
+            function Student(name){
+                this.name = name;
+            }
+            // 原型继承，通过改写student的原型，实现方法服用。
+            Student.prototype.hello = function(){
+                alert('Hello, ' + this.name + '!');
+            }
+
+            // student.prototype -> xiaoming.prototype
+                       //student <- xiaoming.constructor
+            var xiaoming = new Student('xiaoming');
+            var xiaohua = new Student('xiaohua');
+            console.log(xiaoming.name);
+            console.log(xiaoming.hello());
+            console.log(xiaoming.constructor === Student.prototype.constructor);
+            console.log(xiaoming.hello === xiaohua.hello);// true,都复用自student。
+            console.log(Object.getPrototypeOf(xiaoming));
+
+            function PrimaryStudent(pros){
+                Student.call(this, pros);
+                this.grade = pros.grade || 1;
+            }
+
+            function F(){
+
+            }
+            F.prototype = Student.prototype;
+            PrimaryStudent.prototype = new F();
+            PrimaryStudent.prototype.constructor = PrimaryStudent;
+            PrimaryStudent.prototype.getGrade = function(){
+                return this.grade;
+            };
+
+            var xiaoming = new PrimaryStudent({
+                name: 'xiaoming',
+                grade: 2
+            });
+
+            console.log(xiaoming.name);
+            console.log(xiaoming.grade);
+
+
+
+
         </script>
     </body>
 </html>
