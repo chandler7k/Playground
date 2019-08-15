@@ -72,10 +72,10 @@
             console.log(''.length);
             console.log(str.search('China'));
             // document.getElementById("demo").innerHTML = pos;    
-            var conststr = '10';
-            var testnum = 20;
-            console.log(conststr + testnum);
-            console.log(testnum + conststr);
+            // var conststr = '10';
+            // var testnum = 20;
+            // console.log(conststr + testnum);
+            // console.log(testnum + conststr);
 
             var nannum = NaN;
             console.log(nannum);
@@ -430,7 +430,7 @@
             }
             // 原型继承，通过改写student的原型，实现方法服用。
             Student.prototype.hello = function(){
-                alert('Hello, ' + this.name + '!');
+                // alert('Hello, ' + this.name + '!');
             }
 
             // student.prototype -> xiaoming.prototype
@@ -466,8 +466,22 @@
             console.log(xiaoming.name);
             console.log(xiaoming.grade);
 
+            function inherits(Child,Parent){
+                var F = function(){};
+                F.prototype = Parent.prototype;
+                Child.prototype = new F();
+                Child.prototype.constructor = Child;
+            }
 
-
+            console.log('window inner size:' + window.innerHeight + '  ' + window.innerWidth);
+            console.log('appName = ' + navigator.appName);
+            console.log('appVersion = ' + navigator.appVersion);
+            console.log('language = ' + navigator.language);
+            console.log('platform = ' + navigator.platform);
+            console.log('userAgent = ' + navigator.userAgent);
+            console.log(screen.width);
+            console.log(location.protocol);
+            document.title = 'learn js';
 
         </script>
     </body>
