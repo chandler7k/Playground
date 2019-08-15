@@ -448,23 +448,77 @@
                 this.grade = pros.grade || 1;
             }
 
-            function F(){
+            
+            // 这他妈JS的原型链继承就他妈是个笑话
+            // function F(){
 
+            // }   
+
+            // F.prototype = Student.prototype;
+            // PrimaryStudent.prototype = new F();
+            // PrimaryStudent.prototype.constructor = PrimaryStudent;
+            // PrimaryStudent.prototype.getGrade = function(){
+            //     return this.grade;
+            // };
+
+            // var xiaoming = new PrimaryStudent({
+            //     name: 'xiaoming',
+            //     grade: 2
+            // });
+
+            // console.log(xiaoming.name);
+            // console.log(xiaoming.grade);
+
+
+
+            function inherits(Child, Parent){
+                var F = function(){};
+                F.prototype = Parent.prototype;
+                Child.prototype = new F();
+                Child.prototype.constructor = Child;
             }
-            F.prototype = Student.prototype;
-            PrimaryStudent.prototype = new F();
-            PrimaryStudent.prototype.constructor = PrimaryStudent;
+
+            inherits(PrimaryStudent,Student);
+
             PrimaryStudent.prototype.getGrade = function(){
                 return this.grade;
             };
 
-            var xiaoming = new PrimaryStudent({
-                name: 'xiaoming',
+            var prixiaoming = new PrimaryStudent({
+                name:'xiaoming',
                 grade: 2
             });
+            console.log('get grade');
+            console.log(prixiaoming.getGrade());
+            console.log(prixiaoming.name);
 
-            console.log(xiaoming.name);
-            console.log(xiaoming.grade);
+            // 这他妈才像点样子
+            class StudentClass{
+                constructor(name){
+                    this.name = name;
+                }
+                hello(){
+                    alert('hello class + ' + this.name);
+
+                }
+            }
+            
+            var xiaomingc = new StudentClass('xiaomingc');
+            // xiaomingc.hello();
+            class PrimaryStudentExtent extends StudentClass{
+                constructor(name,grade){
+                    super(name);
+                    this.grade = grade;
+                }
+
+                mygrade(){
+                    return this.grade;
+                }
+            }
+
+            console.log(Object.getPrototypeOf(xiaomingc));
+            //class的作用就是让JavaScript引擎去实现原来需要我们自己编写的原型链代码。简而言之，用class的好处就是极大地简化了原型链代码。
+
 
             function inherits(Child,Parent){
                 var F = function(){};
