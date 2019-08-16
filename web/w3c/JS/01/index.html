@@ -10,7 +10,23 @@
         <p id='demo'> test </p>
         <p></p>
         <button onclick="this.innerHTML = Date()"></button>
-        <script>
+        <p id='p_id'> test p id</p>
+        <p id="js">JavaScript</p>
+        <div id="list">
+            <p id="java">Java</p>
+            <p id="python">Python</p>
+            <p id="scheme">Scheme</p>
+        </div>
+
+        <div id="parent">
+            <p>First</p>
+            <p>Second</p>
+        </div>
+
+        <label><input type="radio" name="weekday" id="tuesday" value="2"> Tuesday</label>
+
+        <label><input type="file"></label>
+        <script type="text/javascript">
             document.getElementById('demo').innerHTML = 6 + 5;
             document.write(11 + 4);
             console.log(12 + 14);
@@ -71,11 +87,6 @@
             console.log(pos);
             console.log(''.length);
             console.log(str.search('China'));
-            // document.getElementById("demo").innerHTML = pos;    
-            // var conststr = '10';
-            // var testnum = 20;
-            // console.log(conststr + testnum);
-            // console.log(testnum + conststr);
 
             var nannum = NaN;
             console.log(nannum);
@@ -244,25 +255,6 @@
 
             console.log(getAge.apply(xiaoming,[]));
 
-            // xiaoming.age(); // 25, 正常结果
-            // getAge(); // NaN
-            // var fn = xiaoming.age();
-            // console.log(typeof(fn));
-            // // fn();
-
-
-            // var persontest = {
-            //     name: 'sdf',
-            //     age: function(){
-            //         var that = this;
-            //         function getAgefunc(){
-            //             var y = new Date().getFullYear();
-            //             return y - that.birth;
-            //         }
-            //         return getAgefunc();
-            //     }
-            // }
-            // persontest.age();
 
             function parin(){
 
@@ -360,14 +352,6 @@
                 }
                 return ;
             }
-
-            // var f = fibgen(5);
-            // console.log(f.next());
-            // console.log(f.next());
-            // console.log(f.next());
-            // console.log(f.next());
-            // console.log(f.next());
-            // console.log(f.next());
 
             for(var x of fibgen(10)){
                 console.log(x);
@@ -536,6 +520,44 @@
             console.log(screen.width);
             console.log(location.protocol);
             document.title = 'learn js';
+
+            var ppid = document.getElementById('p_id');
+            ppid.innerHTML = ' ABC <span style="color:red">RED</span> XYZ"';
+
+
+            var ppidtest = document.getElementById('p_id');
+            // 插入dom
+            var js = document.getElementById('js'),
+                list = document.getElementById('list');
+            list.appendChild(js);
+            var haskell = document.createElement('p');
+            haskell.id = 'haskel';
+            haskell.innerHTML = 'haskel';
+            // list.appendChild(haskell);
+
+            var d = document.createElement('style');
+            d.setAttribute('type', 'text/css');
+            d.innerHTML = 'p { color: red }';
+            document.getElementsByTagName('head')[0].appendChild(d);
+
+            var ref = ducument.getElementById('python');
+            list.insertBefore(haskell,ref);
+
+
+            var partoremove = document.getElementById('parent');
+            partoremove.removeChild(partoremove.children[0]);
+
+            var f = ducouemt.getElementById('file');
+            var filename = f.value;
+            if(!filename || (!filename.endsWidth('jpg'))){
+                alert('cannot upload image');
+                return false;
+            }
+
+
+
+
+
 
         </script>
     </body>
