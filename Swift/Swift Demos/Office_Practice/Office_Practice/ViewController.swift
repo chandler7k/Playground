@@ -22,7 +22,7 @@ class ViewController: UIViewController {
         label.adjustsFontForContentSizeCategory = true // font size based on the dynamic type setting by the user
         
         guard let customFont = UIFont(name: "CustomFont-Light", size: UIFont.labelFontSize) else{
-//            fatalError("Failed to load the  font")
+            return
         }
         label.font = UIFontMetrics(forTextStyle: .headline).scaledFont(for: customFont)
         label.adjustsFontForContentSizeCategory = true
