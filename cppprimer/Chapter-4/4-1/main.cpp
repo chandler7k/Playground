@@ -31,6 +31,8 @@ int main() {
     }
 
 //    cout << vc << endl;
+    int *as;
+    cout << sizeof *as << endl;
 
 
     return 0;
