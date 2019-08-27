@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 #include <vector>
 using namespace std;
 int getvalue(int i){
@@ -33,6 +34,11 @@ int main() {
 //    cout << vc << endl;
     int *as;
     cout << sizeof *as << endl;
+
+
+    string s = "sdfafdsasdfsadfsdaf";
+    cout << sizeof(s) << endl;
+
 
 
     return 0;
