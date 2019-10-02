@@ -37,7 +37,7 @@ int main() {
 
 
     string s = "sdfafdsasdfsadfsdaf";
-    cout << sizeof(s) << endl;
+    cout << sizeof(s) << endl; // 24, 是String固定部分的大小
 
 
 
