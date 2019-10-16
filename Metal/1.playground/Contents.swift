@@ -11,6 +11,7 @@ view.clearColor = MTLClearColor(red: 1, green: 1, blue: 0.8, alpha: 1);
 
 let allocator = MTKMeshBufferAllocator(device: device) // bufferalloctor管理mesh内存
 // 创建Metal IO mesh
+// sphereWithExtent返回球面大小
 let mdlMesh = MDLMesh(sphereWithExtent: [0.2, 0.75, 0.2], segments: [100, 100], inwardNormals: false, geometryType: .triangles, allocator: allocator)
 // 将mtal io mesh转化成metalkit mesh
 let mtMesh = try MTKMesh(mesh: mdlMesh, device: device)
@@ -37,7 +38,7 @@ fragment float4 fragment_main() {
   return float4(0, 0.4, 0.21, 1);
 }
 """
-
+// fragment_main返回的是颜色
 
 // set up metal library
 let library = try device.makeLibrary(source: shader, options: nil)
