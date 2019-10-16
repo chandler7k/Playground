@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/houdini/Documents/GitHub/Playground/DataStructure/Graphic/main.cpp
+iostream
+-
+vector
+-
+algorithm
+-
+vector
+-
+
