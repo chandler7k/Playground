@@ -66,10 +66,9 @@ function showDetails() {
     });
 }
 
-function initializeEvents() {
-    var thumbnials = getThumbnailsArray();
+
+(function (thumbnials) {
     thumbnials.forEach(addThumbClickedHandler);
     addKeyPressHandler();
-}
+})(getThumbnailsArray());
 
-initializeEvents();
