@@ -20,7 +20,27 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+//      routes: {
+//        "new_page":(context)=>EchoRoute(),
+//        "tip2":(context){
+//          //路由表属性传值，感觉跟就是参数传递
+//          return TipRoute(text: ModalRoute.of(context).settings.arguments);
+//        },
+//        "/":(context)=> MyHomePage(title: 'Flutter Demo Home Page'),
+//      },
+      onGenerateRoute: (RouteSettings settings){
+        String routeName = settings.arguments;
+        if(routeName == "hi"){
+          return MaterialPageRoute(builder: (context){
+            return TipRoute(text: routeName);
+          },settings: settings);
+        }else{
+          return MaterialPageRoute(builder: (context){
+            return EchoRoute();
+          },settings: settings);
+        }
+
+      },
     );
   }
 }
@@ -102,9 +122,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Text("open new route"),
               textColor: Colors.blue,
               onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context){
-                  return NewRoute();
-                }));
+                  Navigator.pushNamed(context, "new_page",arguments: "echo");
               },
 
             ),
@@ -134,4 +152,72 @@ class NewRoute extends StatelessWidget {
     );
     return null;
   }
+}
+
+class TipRoute extends StatelessWidget{
+  TipRoute({
+    Key key,
+    @required this.text,
+}):super(key: key);
+  final String text;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("提示"),
+      ),
+      body: Padding(
+          padding: EdgeInsets.all(18),
+          child: Center(
+            child: Column(
+              children: <Widget>[
+                Text(text),
+                RaisedButton(
+                  onPressed: ()=>Navigator.pop(context,"我是返回值"),
+                  child: Text("back"),
+                )
+              ],
+            ),
+          ),
+      ),
+    );
+  }
+
+}
+
+class RouterTestRoute extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: RaisedButton(
+          onPressed: () async{
+            var result = await Navigator.push(context, MaterialPageRoute(
+              builder: (context){
+                return TipRoute(text: "我是提示xxxx");
+              },
+            ),
+            );
+            print("路由器返回值 $result");
+          },
+        child: Text("open suggesst"),
+      ),
+    );
+    return null;
+  }
+
+}
+
+// 命名路由传参数
+class EchoRoute extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+        var args = ModalRoute.of(context).settings.arguments;
+        return Scaffold(
+          appBar: AppBar(
+            title: Text("$args"),
+          ),
+        );
+
+  }
+
 }
