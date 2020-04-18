@@ -24,10 +24,11 @@ struct ContentView : View {
                     minWidth: 0,
                     maxWidth: .infinity,
                     alignment: .trailing)
-            Button("test"){
-                self.model.brain = .left("1.23")
+            Button("history:\(model.history.count)"){
+//                self.model.brain = .left("1.23")
+                print(self.model.history)
             }
-            CalculatorButtonPad(brain: $model.brain)
+            CalculatorButtonPad(model: model)
                 .padding(.bottom)
         }
     }
@@ -62,7 +63,8 @@ struct CalculatorButton : View {
 
 struct CalculatorButtonRow : View {
     let row: [CalculatorButtonItem]
-    @Binding var brain: CalculatorBrain
+//    @Binding var brain: CalculatorBrain
+    var model: CalculatorModel
     var body: some View {
         HStack {
             ForEach(row, id: \.self) { item in
@@ -73,7 +75,7 @@ struct CalculatorButtonRow : View {
                     foregroundColor: item.foregroundColor)
                 {
                     print("Button: \(item.title)")
-                    self.brain = self.brain.apply(item: item)
+                    self.model.apply(item: item)
                 }
             }
         }
@@ -81,7 +83,8 @@ struct CalculatorButtonRow : View {
 }
 
 struct CalculatorButtonPad: View {
-    @Binding var brain: CalculatorBrain
+//    @Binding var brain: CalculatorBrain
+    var model: CalculatorModel
     let pad: [[CalculatorButtonItem]] = [
         [.command(.clear), .command(.flip),
          .command(.percent), .op(.divide)],
@@ -94,7 +97,7 @@ struct CalculatorButtonPad: View {
     var body: some View {
         VStack(spacing: 8) {
             ForEach(pad, id: \.self) { row in
-                CalculatorButtonRow(row: row, brain: self.$brain)
+                CalculatorButtonRow(row: row, model: self.model)
             }
         }
     }
