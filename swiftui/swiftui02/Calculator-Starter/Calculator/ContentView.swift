@@ -14,7 +14,7 @@ struct ContentView : View {
 //    @State private var brain: CalculatorBrain = .left("0")
     @EnvironmentObject var model: CalculatorModel
     @State private var editingHistory = false
-    
+    @State private var showingResult = false
     var body: some View {
         VStack(spacing: 12) {
             Spacer()
@@ -29,7 +29,11 @@ struct ContentView : View {
                 .frame(
                     minWidth: 0,
                     maxWidth: .infinity,
-                    alignment: .trailing)
+                    alignment: .trailing).onTapGesture {
+                        self.showingResult = true
+            }.alert(isPresented: self.$showingResult) {
+                Alert(title: Text(self.model.historyDetail),message: Text(self.model.brain.output))
+            }
             Button("history:\(model.history.count)"){
 //                self.model.brain = .left("1.23")
                 print(self.model.history)
