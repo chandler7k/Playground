@@ -20,7 +20,7 @@ struct ContentView : View {
             Spacer()
             Button("操作履历：\(model.history.count)"){
                 self.editingHistory = true
-            }.sheet(isPresented: self.$editingHistory) { HistoryView(model: self.model)
+            }.sheet(isPresented: self.$editingHistory) { HistoryView(model: self.model,showModel: self.$editingHistory)
             }
             Text(model.brain.output)
                 .font(.system(size: 76))
@@ -116,6 +116,7 @@ struct CalculatorButtonPad: View {
 
 struct HistoryView:View {
     @ObservedObject var model: CalculatorModel
+    @Binding var showModel: Bool
     var body: some View{
         VStack{
             if model.totalCount == 0{
@@ -132,6 +133,9 @@ struct HistoryView:View {
             }
             
             Slider(value: $model.slidingIndex,in: 0...Float(model.totalCount),step: 1)
+            Button("close"){
+                self.showModel = false;
+            }
         }.padding()
     }
 }
