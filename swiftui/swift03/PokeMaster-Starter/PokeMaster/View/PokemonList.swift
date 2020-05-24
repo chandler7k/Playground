@@ -10,9 +10,6 @@ import Foundation
 import SwiftUI
 import UIKit
 struct PokemonList: View {
-    init() {
-        UITableView.appearance().separatorStyle = .none
-    }
 //    var body: some View{
 ////        UITableView.appearance().separa
 //        List(PokemonViewModel.all){ pokemon in
@@ -21,8 +18,12 @@ struct PokemonList: View {
 //        }
 //    }
     @State var expandingIndex: Int?
+    @State var searchText: String = ""
     var body: some View{
         ScrollView{
+            TextField("搜索", text: $searchText)
+                .frame(height:40)
+                .padding(.horizontal,25)
             ForEach(PokemonViewModel.all){ pokemon in
                 PokemonInfoRow(model: pokemon, expanded: self.expandingIndex == pokemon.id)
                     .onTapGesture {
@@ -46,6 +47,6 @@ struct PokemonList: View {
 
 struct PokemonList_Previews: PreviewProvider {
     static var previews: some View {
-        PokemonList()
+        PokemonList(expandingIndex: 0, searchText: "")
     }
 }

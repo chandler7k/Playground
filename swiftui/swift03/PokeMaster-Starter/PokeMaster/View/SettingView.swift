@@ -31,6 +31,8 @@ struct SettingView: View {
     var body: some View{
         Form{
             accountSection
+            optionSection
+            actionSection
         }
     }
     
@@ -51,6 +53,39 @@ struct SettingView: View {
             }
             Button(setting.accountBehavior.text){
                 print("登录/注册")
+            }
+        }
+    }
+    
+    var optionSection: some View{
+        Section(header: Text("选项")) {
+            Toggle(isOn: $setting.showEnglishName) {
+                Text("显示英文名")
+            }
+            
+            Picker(selection: $setting.sorting, label: Text("排序方式")) {
+                ForEach(Settings.Sorting.allCases,id: \.self){
+                    Text($0.text)
+                }
+            }
+            Toggle(isOn: $setting.shadowFavoriteOnly) {
+                Text("只展示收藏")
+            }
+        }
+    }
+    
+    var actionSection: some View{
+        Section{
+//            Button{
+//                Text("清空缓存")
+//                    .foregroundColor(Color.red)
+//                print("clean cache")
+//            }
+            Button(action:{
+                print("clean cache")
+            }){
+                Text("清空缓存")
+                    .foregroundColor(Color.red)
             }
         }
     }

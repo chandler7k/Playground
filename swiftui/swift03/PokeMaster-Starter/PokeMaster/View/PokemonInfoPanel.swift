@@ -27,8 +27,14 @@ struct PokemonInfoPanel: View {
             .opacity(0.2)
     }
     
+    @State var darkBlur = false
     var body: some View{
         VStack(spacing: 20){
+            Button(action: {
+                self.darkBlur.toggle()
+            }) {
+                Text("切换模糊效果")
+            }
             topIndicator
             Header(model: self.model)
             pokemonDescription
@@ -37,7 +43,7 @@ struct PokemonInfoPanel: View {
             AblityList(model: self.model, abilityModels: abilities)
         }
         .padding(EdgeInsets(top: 12, leading: 30, bottom: 30, trailing: 30))
-        .blurBackground(style: .systemMaterial)
+        .blurBackground(style: self.darkBlur ? .systemMaterialDark : .systemMaterial)
         .cornerRadius(12)
         .fixedSize(horizontal: false, vertical: true)
     }
@@ -129,6 +135,6 @@ extension PokemonInfoPanel{
 
 struct PokemonInfoPanel_Previews: PreviewProvider {
     static var previews: some View {
-        PokemonInfoPanel(model: .sample(id: 1))
+        PokemonInfoPanel(model: .sample(id: 1),darkBlur: false)
     }
 }

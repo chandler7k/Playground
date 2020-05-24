@@ -91,6 +91,7 @@
 		F8E4415E2479754700785193 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E4415D2479754700785193 /* BlurView.swift */; };
 		F8E441602479780100785193 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E4415F2479780100785193 /* SettingView.swift */; };
 		F8E4416224797D8E00785193 /* SettingRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E4416124797D8E00785193 /* SettingRootView.swift */; };
+		F8E44164247A3F2400785193 /* PokemonRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E44163247A3F2400785193 /* PokemonRootView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -180,6 +181,7 @@
 		F8E4415D2479754700785193 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		F8E4415F2479780100785193 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		F8E4416124797D8E00785193 /* SettingRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingRootView.swift; sourceTree = "<group>"; };
+		F8E44163247A3F2400785193 /* PokemonRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonRootView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -385,6 +387,7 @@
 				F8E4415D2479754700785193 /* BlurView.swift */,
 				F8E4415F2479780100785193 /* SettingView.swift */,
 				F8E4416124797D8E00785193 /* SettingRootView.swift */,
+				F8E44163247A3F2400785193 /* PokemonRootView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -546,6 +549,7 @@
 				F8E4415A2479675E00785193 /* PokemonInfoPanel.swift in Sources */,
 				F8E4416224797D8E00785193 /* SettingRootView.swift in Sources */,
 				F8E4415E2479754700785193 /* BlurView.swift in Sources */,
+				F8E44164247A3F2400785193 /* PokemonRootView.swift in Sources */,
 				F84FC15024791D1D00879359 /* PokemonList.swift in Sources */,
 				D1320AD823178614006F02A6 /* Helpers.swift in Sources */,
 				D1320B2223178614006F02A6 /* SceneDelegate.swift in Sources */,
