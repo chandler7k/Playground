@@ -1,0 +1,640 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F82CFEE724889ABB00A05BAC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F82CFEE624889ABB00A05BAC /* AppDelegate.m */; };
+		F82CFEEA24889ABB00A05BAC /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F82CFEE924889ABB00A05BAC /* SceneDelegate.m */; };
+		F82CFEED24889ABB00A05BAC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F82CFEEC24889ABB00A05BAC /* ViewController.m */; };
+		F82CFEF024889ABB00A05BAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F82CFEEE24889ABB00A05BAC /* Main.storyboard */; };
+		F82CFEF224889AC000A05BAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F82CFEF124889AC000A05BAC /* Assets.xcassets */; };
+		F82CFEF524889AC000A05BAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F82CFEF324889AC000A05BAC /* LaunchScreen.storyboard */; };
+		F82CFEF824889AC000A05BAC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F82CFEF724889AC000A05BAC /* main.m */; };
+		F82CFF0224889AC000A05BAC /* KPPPOPTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F82CFF0124889AC000A05BAC /* KPPPOPTests.m */; };
+		F82CFF0D24889AC000A05BAC /* KPPPOPUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F82CFF0C24889AC000A05BAC /* KPPPOPUITests.m */; };
+		F82CFF1D24889AF500A05BAC /* HLAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = F82CFF1C24889AF500A05BAC /* HLAnimator.m */; };
+		F82CFF202488A2D800A05BAC /* HLPopItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F82CFF1F2488A2D800A05BAC /* HLPopItem.m */; };
+		F82CFF232488C4C200A05BAC /* HLPopupWindowManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F82CFF222488C4C200A05BAC /* HLPopupWindowManager.m */; };
+		F82CFF262488C58C00A05BAC /* HLPopupContainerWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = F82CFF252488C58C00A05BAC /* HLPopupContainerWindow.m */; };
+		F82CFF292488C73E00A05BAC /* UIWindow+HLKeyWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = F82CFF282488C73E00A05BAC /* UIWindow+HLKeyWindow.m */; };
+		F82CFF2F2488CF3100A05BAC /* HLBasePopUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F82CFF2E2488CF3100A05BAC /* HLBasePopUpViewController.m */; };
+		F82CFF322488D01000A05BAC /* HLPopupContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = F82CFF312488D01000A05BAC /* HLPopupContainerView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F82CFEFE24889AC000A05BAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F82CFEDA24889ABB00A05BAC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F82CFEE124889ABB00A05BAC;
+			remoteInfo = KPPPOP;
+		};
+		F82CFF0924889AC000A05BAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F82CFEDA24889ABB00A05BAC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F82CFEE124889ABB00A05BAC;
+			remoteInfo = KPPPOP;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F82CFEE224889ABB00A05BAC /* KPPPOP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KPPPOP.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F82CFEE524889ABB00A05BAC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F82CFEE624889ABB00A05BAC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F82CFEE824889ABB00A05BAC /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		F82CFEE924889ABB00A05BAC /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		F82CFEEB24889ABB00A05BAC /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		F82CFEEC24889ABB00A05BAC /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		F82CFEEF24889ABB00A05BAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F82CFEF124889AC000A05BAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F82CFEF424889AC000A05BAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F82CFEF624889AC000A05BAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F82CFEF724889AC000A05BAC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F82CFEFD24889AC000A05BAC /* KPPPOPTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KPPPOPTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F82CFF0124889AC000A05BAC /* KPPPOPTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KPPPOPTests.m; sourceTree = "<group>"; };
+		F82CFF0324889AC000A05BAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F82CFF0824889AC000A05BAC /* KPPPOPUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KPPPOPUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F82CFF0C24889AC000A05BAC /* KPPPOPUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KPPPOPUITests.m; sourceTree = "<group>"; };
+		F82CFF0E24889AC000A05BAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F82CFF1B24889AF500A05BAC /* HLAnimator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HLAnimator.h; sourceTree = "<group>"; };
+		F82CFF1C24889AF500A05BAC /* HLAnimator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HLAnimator.m; sourceTree = "<group>"; };
+		F82CFF1E2488A2D800A05BAC /* HLPopItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HLPopItem.h; sourceTree = "<group>"; };
+		F82CFF1F2488A2D800A05BAC /* HLPopItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HLPopItem.m; sourceTree = "<group>"; };
+		F82CFF212488C4C200A05BAC /* HLPopupWindowManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HLPopupWindowManager.h; sourceTree = "<group>"; };
+		F82CFF222488C4C200A05BAC /* HLPopupWindowManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HLPopupWindowManager.m; sourceTree = "<group>"; };
+		F82CFF242488C58C00A05BAC /* HLPopupContainerWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HLPopupContainerWindow.h; sourceTree = "<group>"; };
+		F82CFF252488C58C00A05BAC /* HLPopupContainerWindow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HLPopupContainerWindow.m; sourceTree = "<group>"; };
+		F82CFF272488C73E00A05BAC /* UIWindow+HLKeyWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIWindow+HLKeyWindow.h"; sourceTree = "<group>"; };
+		F82CFF282488C73E00A05BAC /* UIWindow+HLKeyWindow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+HLKeyWindow.m"; sourceTree = "<group>"; };
+		F82CFF2D2488CF3100A05BAC /* HLBasePopUpViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HLBasePopUpViewController.h; sourceTree = "<group>"; };
+		F82CFF2E2488CF3100A05BAC /* HLBasePopUpViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HLBasePopUpViewController.m; sourceTree = "<group>"; };
+		F82CFF302488D01000A05BAC /* HLPopupContainerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HLPopupContainerView.h; sourceTree = "<group>"; };
+		F82CFF312488D01000A05BAC /* HLPopupContainerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HLPopupContainerView.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F82CFEDF24889ABB00A05BAC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F82CFEFA24889AC000A05BAC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F82CFF0524889AC000A05BAC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F82CFED924889ABB00A05BAC = {
+			isa = PBXGroup;
+			children = (
+				F82CFEE424889ABB00A05BAC /* KPPPOP */,
+				F82CFF0024889AC000A05BAC /* KPPPOPTests */,
+				F82CFF0B24889AC000A05BAC /* KPPPOPUITests */,
+				F82CFEE324889ABB00A05BAC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F82CFEE324889ABB00A05BAC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F82CFEE224889ABB00A05BAC /* KPPPOP.app */,
+				F82CFEFD24889AC000A05BAC /* KPPPOPTests.xctest */,
+				F82CFF0824889AC000A05BAC /* KPPPOPUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F82CFEE424889ABB00A05BAC /* KPPPOP */ = {
+			isa = PBXGroup;
+			children = (
+				F82CFF1A24889AD100A05BAC /* HLPopUp */,
+				F82CFEE524889ABB00A05BAC /* AppDelegate.h */,
+				F82CFEE624889ABB00A05BAC /* AppDelegate.m */,
+				F82CFEE824889ABB00A05BAC /* SceneDelegate.h */,
+				F82CFEE924889ABB00A05BAC /* SceneDelegate.m */,
+				F82CFEEB24889ABB00A05BAC /* ViewController.h */,
+				F82CFEEC24889ABB00A05BAC /* ViewController.m */,
+				F82CFEEE24889ABB00A05BAC /* Main.storyboard */,
+				F82CFEF124889AC000A05BAC /* Assets.xcassets */,
+				F82CFEF324889AC000A05BAC /* LaunchScreen.storyboard */,
+				F82CFEF624889AC000A05BAC /* Info.plist */,
+				F82CFEF724889AC000A05BAC /* main.m */,
+			);
+			path = KPPPOP;
+			sourceTree = "<group>";
+		};
+		F82CFF0024889AC000A05BAC /* KPPPOPTests */ = {
+			isa = PBXGroup;
+			children = (
+				F82CFF0124889AC000A05BAC /* KPPPOPTests.m */,
+				F82CFF0324889AC000A05BAC /* Info.plist */,
+			);
+			path = KPPPOPTests;
+			sourceTree = "<group>";
+		};
+		F82CFF0B24889AC000A05BAC /* KPPPOPUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F82CFF0C24889AC000A05BAC /* KPPPOPUITests.m */,
+				F82CFF0E24889AC000A05BAC /* Info.plist */,
+			);
+			path = KPPPOPUITests;
+			sourceTree = "<group>";
+		};
+		F82CFF1A24889AD100A05BAC /* HLPopUp */ = {
+			isa = PBXGroup;
+			children = (
+				F82CFF1B24889AF500A05BAC /* HLAnimator.h */,
+				F82CFF1C24889AF500A05BAC /* HLAnimator.m */,
+				F82CFF1E2488A2D800A05BAC /* HLPopItem.h */,
+				F82CFF1F2488A2D800A05BAC /* HLPopItem.m */,
+				F82CFF212488C4C200A05BAC /* HLPopupWindowManager.h */,
+				F82CFF222488C4C200A05BAC /* HLPopupWindowManager.m */,
+				F82CFF242488C58C00A05BAC /* HLPopupContainerWindow.h */,
+				F82CFF252488C58C00A05BAC /* HLPopupContainerWindow.m */,
+				F82CFF272488C73E00A05BAC /* UIWindow+HLKeyWindow.h */,
+				F82CFF282488C73E00A05BAC /* UIWindow+HLKeyWindow.m */,
+				F82CFF2D2488CF3100A05BAC /* HLBasePopUpViewController.h */,
+				F82CFF2E2488CF3100A05BAC /* HLBasePopUpViewController.m */,
+				F82CFF302488D01000A05BAC /* HLPopupContainerView.h */,
+				F82CFF312488D01000A05BAC /* HLPopupContainerView.m */,
+			);
+			name = HLPopUp;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F82CFEE124889ABB00A05BAC /* KPPPOP */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F82CFF1124889AC000A05BAC /* Build configuration list for PBXNativeTarget "KPPPOP" */;
+			buildPhases = (
+				F82CFEDE24889ABB00A05BAC /* Sources */,
+				F82CFEDF24889ABB00A05BAC /* Frameworks */,
+				F82CFEE024889ABB00A05BAC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KPPPOP;
+			productName = KPPPOP;
+			productReference = F82CFEE224889ABB00A05BAC /* KPPPOP.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F82CFEFC24889AC000A05BAC /* KPPPOPTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F82CFF1424889AC000A05BAC /* Build configuration list for PBXNativeTarget "KPPPOPTests" */;
+			buildPhases = (
+				F82CFEF924889AC000A05BAC /* Sources */,
+				F82CFEFA24889AC000A05BAC /* Frameworks */,
+				F82CFEFB24889AC000A05BAC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F82CFEFF24889AC000A05BAC /* PBXTargetDependency */,
+			);
+			name = KPPPOPTests;
+			productName = KPPPOPTests;
+			productReference = F82CFEFD24889AC000A05BAC /* KPPPOPTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F82CFF0724889AC000A05BAC /* KPPPOPUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F82CFF1724889AC000A05BAC /* Build configuration list for PBXNativeTarget "KPPPOPUITests" */;
+			buildPhases = (
+				F82CFF0424889AC000A05BAC /* Sources */,
+				F82CFF0524889AC000A05BAC /* Frameworks */,
+				F82CFF0624889AC000A05BAC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F82CFF0A24889AC000A05BAC /* PBXTargetDependency */,
+			);
+			name = KPPPOPUITests;
+			productName = KPPPOPUITests;
+			productReference = F82CFF0824889AC000A05BAC /* KPPPOPUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F82CFEDA24889ABB00A05BAC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1150;
+				ORGANIZATIONNAME = xinhuamm;
+				TargetAttributes = {
+					F82CFEE124889ABB00A05BAC = {
+						CreatedOnToolsVersion = 11.5;
+					};
+					F82CFEFC24889AC000A05BAC = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = F82CFEE124889ABB00A05BAC;
+					};
+					F82CFF0724889AC000A05BAC = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = F82CFEE124889ABB00A05BAC;
+					};
+				};
+			};
+			buildConfigurationList = F82CFEDD24889ABB00A05BAC /* Build configuration list for PBXProject "KPPPOP" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F82CFED924889ABB00A05BAC;
+			productRefGroup = F82CFEE324889ABB00A05BAC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F82CFEE124889ABB00A05BAC /* KPPPOP */,
+				F82CFEFC24889AC000A05BAC /* KPPPOPTests */,
+				F82CFF0724889AC000A05BAC /* KPPPOPUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F82CFEE024889ABB00A05BAC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F82CFEF524889AC000A05BAC /* LaunchScreen.storyboard in Resources */,
+				F82CFEF224889AC000A05BAC /* Assets.xcassets in Resources */,
+				F82CFEF024889ABB00A05BAC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F82CFEFB24889AC000A05BAC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F82CFF0624889AC000A05BAC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F82CFEDE24889ABB00A05BAC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F82CFF202488A2D800A05BAC /* HLPopItem.m in Sources */,
+				F82CFF322488D01000A05BAC /* HLPopupContainerView.m in Sources */,
+				F82CFF292488C73E00A05BAC /* UIWindow+HLKeyWindow.m in Sources */,
+				F82CFEED24889ABB00A05BAC /* ViewController.m in Sources */,
+				F82CFEE724889ABB00A05BAC /* AppDelegate.m in Sources */,
+				F82CFF2F2488CF3100A05BAC /* HLBasePopUpViewController.m in Sources */,
+				F82CFEF824889AC000A05BAC /* main.m in Sources */,
+				F82CFF232488C4C200A05BAC /* HLPopupWindowManager.m in Sources */,
+				F82CFEEA24889ABB00A05BAC /* SceneDelegate.m in Sources */,
+				F82CFF262488C58C00A05BAC /* HLPopupContainerWindow.m in Sources */,
+				F82CFF1D24889AF500A05BAC /* HLAnimator.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F82CFEF924889AC000A05BAC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F82CFF0224889AC000A05BAC /* KPPPOPTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F82CFF0424889AC000A05BAC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F82CFF0D24889AC000A05BAC /* KPPPOPUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F82CFEFF24889AC000A05BAC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F82CFEE124889ABB00A05BAC /* KPPPOP */;
+			targetProxy = F82CFEFE24889AC000A05BAC /* PBXContainerItemProxy */;
+		};
+		F82CFF0A24889AC000A05BAC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F82CFEE124889ABB00A05BAC /* KPPPOP */;
+			targetProxy = F82CFF0924889AC000A05BAC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F82CFEEE24889ABB00A05BAC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F82CFEEF24889ABB00A05BAC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F82CFEF324889AC000A05BAC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F82CFEF424889AC000A05BAC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F82CFF0F24889AC000A05BAC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		F82CFF1024889AC000A05BAC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F82CFF1224889AC000A05BAC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = R2U8SE68WE;
+				INFOPLIST_FILE = KPPPOP/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.inhuamm.KPPPOP;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F82CFF1324889AC000A05BAC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = R2U8SE68WE;
+				INFOPLIST_FILE = KPPPOP/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.inhuamm.KPPPOP;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F82CFF1524889AC000A05BAC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = R2U8SE68WE;
+				INFOPLIST_FILE = KPPPOPTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.inhuamm.KPPPOPTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KPPPOP.app/KPPPOP";
+			};
+			name = Debug;
+		};
+		F82CFF1624889AC000A05BAC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = R2U8SE68WE;
+				INFOPLIST_FILE = KPPPOPTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.inhuamm.KPPPOPTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KPPPOP.app/KPPPOP";
+			};
+			name = Release;
+		};
+		F82CFF1824889AC000A05BAC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = R2U8SE68WE;
+				INFOPLIST_FILE = KPPPOPUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.inhuamm.KPPPOPUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = KPPPOP;
+			};
+			name = Debug;
+		};
+		F82CFF1924889AC000A05BAC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = R2U8SE68WE;
+				INFOPLIST_FILE = KPPPOPUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.inhuamm.KPPPOPUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = KPPPOP;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F82CFEDD24889ABB00A05BAC /* Build configuration list for PBXProject "KPPPOP" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F82CFF0F24889AC000A05BAC /* Debug */,
+				F82CFF1024889AC000A05BAC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F82CFF1124889AC000A05BAC /* Build configuration list for PBXNativeTarget "KPPPOP" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F82CFF1224889AC000A05BAC /* Debug */,
+				F82CFF1324889AC000A05BAC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F82CFF1424889AC000A05BAC /* Build configuration list for PBXNativeTarget "KPPPOPTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F82CFF1524889AC000A05BAC /* Debug */,
+				F82CFF1624889AC000A05BAC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F82CFF1724889AC000A05BAC /* Build configuration list for PBXNativeTarget "KPPPOPUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F82CFF1824889AC000A05BAC /* Debug */,
+				F82CFF1924889AC000A05BAC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F82CFEDA24889ABB00A05BAC /* Project object */;
+}
