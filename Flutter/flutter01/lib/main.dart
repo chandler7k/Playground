@@ -128,7 +128,8 @@ class _MyHomePageState extends State<MyHomePage> {
 //                },
 //                  fullscreenDialog: true,
 //                ));
-              Navigator.pushNamed(context, "echo_page",arguments: "hi");
+//              Navigator.pushNamed(context, "echo_page",arguments: "hi");
+              debugDumpApp();
               },
             ),
 
