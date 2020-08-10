@@ -30,6 +30,8 @@ class MyApp extends StatelessWidget {
       routes: {
         "new_page":(context) => NewRoute(),
         "echo_page":(context) => EchoRoute(),
+        "context_Route":(context) => ContextRoute(),
+        "couter_page":(context) => CounterWidget(),
         "/":(context) => MyHomePage(title: 'Flutter Demo Home Page'),
       },
 //      onGenerateRoute:(RouteSettings settings) {
@@ -128,8 +130,7 @@ class _MyHomePageState extends State<MyHomePage> {
 //                },
 //                  fullscreenDialog: true,
 //                ));
-//              Navigator.pushNamed(context, "echo_page",arguments: "hi");
-              debugDumpApp();
+              Navigator.pushNamed(context, "couter_page",);
               },
             ),
 
@@ -149,6 +150,7 @@ class NewRoute extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
+//    return Echo(text: "Hello world",);
     return Scaffold(
       appBar: AppBar(
         title: Text("New route"),
@@ -157,15 +159,20 @@ class NewRoute extends StatelessWidget{
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text("This is new route"),
-            FlatButton(
-              child: Text("back"),
-              textColor: Colors.blue,
-              onPressed: (){
-                Navigator.pop(context);
-              },
-            ),
+//            Echo(text: "Hello world")
+            CounterWidget()
           ],
+
+//          children: <Widget>[
+//            Text("This is new route"),
+//            FlatButton(
+//              child: Text("back"),
+//              textColor: Colors.blue,
+//              onPressed: (){
+//                Navigator.pop(context);
+//              },
+//            ),
+//          ],
         ),
       ),
     );
@@ -269,5 +276,118 @@ class RandomWordsWidget extends StatelessWidget{
       padding: const EdgeInsets.all(8.0),
       child: new Text(wordPair.toString()),
     );
+  }
+}
+
+
+class Echo extends StatelessWidget{
+  final String text;
+  final Color backgroundColor;
+  const Echo({
+  Key key,
+    @required this.text,
+    this.backgroundColor: Colors.grey,
+}):super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Center(
+      child: Container(
+        color: backgroundColor,
+        child: Text(this.text),
+      ),
+    );
+  }
+}
+
+
+class ContextRoute extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Context测试"),
+      ),
+      body: Container(
+        child: Builder(builder: (context){
+          Scaffold scaffold = context.findAncestorWidgetOfExactType<Scaffold>();
+          return (scaffold.appBar as AppBar).title;
+        }),
+      ),
+    );
+  }
+}
+
+
+class CounterWidget extends StatefulWidget{
+  const CounterWidget({
+    Key key,
+    this.initValue: 0,
+});
+
+  final int initValue;
+  @override
+  _CounterWidgetState createState() => new _CounterWidgetState();
+}
+
+class _CounterWidgetState extends State<CounterWidget>{
+  int _counter;
+  @override
+  void initState(){
+    super.initState();
+    _counter = widget.initValue;
+    print("initState");
+  }
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    print("build");
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("data"),
+      ),
+      body: Center(
+        child: FlatButton(
+          child: Text("$_counter"),
+          onPressed: ()=>setState(()=>++_counter),
+        ),
+      ),
+    );
+  }
+  @override
+  void didUpdateWidget(CounterWidget oldWidget) {
+    // TODO: implement didUpdateWidget
+    super.didUpdateWidget(oldWidget);
+    print("didUpdateWidget");
+  }
+
+  @override
+  void deactivate() {
+    // TODO: implement deactivate
+    super.deactivate();
+    print("deactivate");
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    print("dispose");
+  }
+
+  @override
+  void reassemble() {
+    // TODO: implement reassemble
+    super.reassemble();
+    print("reassemble");
+  }
+
+  @override
+  void didChangeDependencies() {
+    // TODO: implement didChangeDependencies
+    super.didChangeDependencies();
+    print("didChangeDependencies");
   }
 }
