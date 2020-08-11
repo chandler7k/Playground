@@ -32,6 +32,7 @@ class MyApp extends StatelessWidget {
       // 注册路由表
       routes: {
         "new_page":(context) => NewRouteTextField(),
+        "FocusTestRoute":(context) => FocusTestRoute(),
         "echo_page":(context) => EchoRoute(),
         "context_Route":(context) => ContextRoute(),
         "couter_page":(context) => CounterWidget(),
@@ -137,7 +138,7 @@ class _MyHomePageState extends State<MyHomePage> {
 //                },
 //                  fullscreenDialog: true,
 //                ));
-              Navigator.pushNamed(context, "new_page",);
+              Navigator.pushNamed(context, "FocusTestRoute",);
               },
             ),
 
@@ -149,6 +150,83 @@ class _MyHomePageState extends State<MyHomePage> {
         tooltip: 'Increment',
         child: Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
+    );
+  }
+}
+
+class FocusTestRoute extends StatefulWidget{
+  @override
+  _FocusTestRouteState createState() => new _FocusTestRouteState();
+}
+
+class _FocusTestRouteState extends State<FocusTestRoute>{
+  FocusNode focusNode1 = new FocusNode();
+  FocusNode focusNode2 = new FocusNode();
+  FocusScopeNode focusScopeNode;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    focusNode1.addListener(() {
+      print(focusNode1.hasFocus);
+    });
+  }
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("focusnode"),
+      ),
+      body: Padding(
+        padding: EdgeInsets.all(16),
+        child: Column(
+          children: <Widget>[
+            TextField(
+              autofocus: true,
+              focusNode: focusNode1,
+              decoration: InputDecoration(
+                  labelText: "input1",
+                prefixIcon: Icon(Icons.person),
+                enabledBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(color: Colors.grey),
+                ),
+                  focusedBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: Colors.blue)
+                  )
+              ),
+            ),
+            TextField(
+              focusNode: focusNode2,//关联focusNode2
+              decoration: InputDecoration(
+                  labelText: "input2"
+              ),
+            ),
+            Builder(builder: (ctx){
+              return Column(
+                children: <Widget>[
+                  RaisedButton(
+                    child: Text("移动焦点"),
+                    onPressed: (){
+                      if(focusScopeNode == null){
+                        focusScopeNode = FocusScope.of(context);
+                      }
+                      focusScopeNode.requestFocus(focusNode2);
+                    },
+                  ),
+                  RaisedButton(
+                    child: Text("隐藏键盘"),
+                    onPressed: (){
+                      focusNode1.unfocus();
+                      focusNode2.unfocus();
+                    },
+                  )
+                ],
+              );
+            },)
+          ],
+        ),
+      ),
     );
   }
 }
