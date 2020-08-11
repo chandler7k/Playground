@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
 import 'package:flutter/widgets.dart';
@@ -29,13 +31,14 @@ class MyApp extends StatelessWidget {
       ),
       // 注册路由表
       routes: {
-        "new_page":(context) => NewRoute(),
+        "new_page":(context) => NewRouteTextField(),
         "echo_page":(context) => EchoRoute(),
         "context_Route":(context) => ContextRoute(),
         "couter_page":(context) => CounterWidget(),
         "SnackBarWidget":(context) => SnackBarWidget(),
         "TapBoxA":(context) => TapBoxA(),
         "ParentWidget":(context) => ParentWidget(),
+        "SwitchAndCheckBoxTestRoute":(context) => SwitchAndCheckBoxTestRoute(),
         "/":(context) => MyHomePage(title: 'Flutter Demo Home Page'),
       },
 //      onGenerateRoute:(RouteSettings settings) {
@@ -310,11 +313,159 @@ class _TapBoxAState extends State<TapBoxA>{
     );
   }
 }
+class NewRouteTextField extends StatefulWidget{
+  @override
+  _NewRouteTextFieldState createState() => new _NewRouteTextFieldState();
+}
+
+class _NewRouteTextFieldState extends State<NewRouteTextField>{
+  TextEditingController _usernameController = TextEditingController();
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    _usernameController.text = "hello world";
+    _usernameController.selection = TextSelection(
+      baseOffset: 2,
+      extentOffset: _usernameController.text.length,
+    );
+    _usernameController.addListener(() {
+      print(_usernameController.text);
+    });
+  }
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("New route"),
+      ),
+      body: Center(
+        child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              TextField(
+                autofocus: true,
+                controller: _usernameController,
+                decoration: InputDecoration(
+                  labelText: "用户名",
+                  hintText: "用户名或者邮箱",
+                  prefixIcon: Icon(Icons.person),
+                ),
+                onChanged: (v){
+                  print("onchange:$v");
+//                  print(_usernameController.text);
+                },
+              ),
+              TextField(
+                decoration: InputDecoration(
+                  labelText: "密码",
+                  hintText: "登录密码",
+                  prefixIcon: Icon(Icons.lock),
+                ),
+                obscureText: true,
+              )
+            ]
+        ),
+      ),
+    );
+  }
+}
 
 
 
 
-class NewRoute extends StatelessWidget{
+class NewRouteImage extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+//    return Echo(text: "Hello world",);
+    void _onpressde(){
+
+    }
+    String icons = "";
+    icons += "\uE914";
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("New route"),
+      ),
+      body: Center(
+        child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+//            FlatButton.icon(onPressed: _onpressde, icon: Icon(Icons.send), label: Text("发送"))
+              Image(
+                image: AssetImage("images/IMG_F4167770EC92-1.jpeg"),
+                width: 100,
+                height: 200,
+                repeat: ImageRepeat.repeatY,
+              ),
+              Image.network("https://avatars2.githubusercontent.com/u/20411648?s=460&v=4",width: 100,),
+              Text(
+                icons,
+                style: TextStyle(
+                  fontFamily: "MaterialIcons",
+                  fontSize: 24,
+                  color: Colors.green,
+                ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Icon(Icons.accessible, color: Colors.green,)
+                ],
+              )
+            ]
+        ),
+      ),
+    );
+  }
+}
+
+class SwitchAndCheckBoxTestRoute extends StatefulWidget{
+  @override
+  _SwitchAndCheckBoxTextRouteState createState() => new _SwitchAndCheckBoxTextRouteState();
+}
+
+class _SwitchAndCheckBoxTextRouteState extends State<SwitchAndCheckBoxTestRoute>{
+  bool _switchSelected = true;
+  bool _checkBoxSelected = true;
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("test"),
+      ),
+      body: Center(
+        child: Column(
+          children: <Widget>[
+            Switch(
+              value: _switchSelected,
+              onChanged: (value){
+                setState(() {
+                  _switchSelected = value;
+                });
+              },
+            ),
+            Checkbox(
+              value: _checkBoxSelected,
+              activeColor: Colors.red,
+              onChanged: (value){
+                setState(() {
+                  _checkBoxSelected = value;
+                });
+              },
+            )
+          ],
+        ),
+      ),
+    );
+
+  }
+}
+
+
+class NewRouteButton extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
