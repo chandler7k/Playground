@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
+import 'package:flutter/widgets.dart';
 void main() {
   runApp(MyApp());
 }
@@ -32,6 +33,9 @@ class MyApp extends StatelessWidget {
         "echo_page":(context) => EchoRoute(),
         "context_Route":(context) => ContextRoute(),
         "couter_page":(context) => CounterWidget(),
+        "SnackBarWidget":(context) => SnackBarWidget(),
+        "TapBoxA":(context) => TapBoxA(),
+        "ParentWidget":(context) => ParentWidget(),
         "/":(context) => MyHomePage(title: 'Flutter Demo Home Page'),
       },
 //      onGenerateRoute:(RouteSettings settings) {
@@ -130,7 +134,7 @@ class _MyHomePageState extends State<MyHomePage> {
 //                },
 //                  fullscreenDialog: true,
 //                ));
-              Navigator.pushNamed(context, "couter_page",);
+              Navigator.pushNamed(context, "new_page",);
               },
             ),
 
@@ -146,7 +150,204 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
+class ParentWidget extends StatefulWidget{
+  @override
+  _ParentWidgetState createState() => new _ParentWidgetState();
+}
+
+class _ParentWidgetState extends State<ParentWidget>{
+  bool _active = false;
+
+  void _handleTapboxChanged(bool newValue){
+    setState(() {
+      _active = newValue;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return new Container(
+      child: TapboxC(
+        active: _active,
+        onChanged: _handleTapboxChanged,
+      ),
+//      child: new TapBoxB(
+//        active: _active,
+//        onChanged: _handleTapboxChanged,
+//      ),
+    );
+  }
+}
+
+
+class TapboxC extends StatefulWidget{
+  TapboxC({Key key, this.active: false, @required this.onChanged}):super(key:key);
+  final bool active;
+  final ValueChanged<bool> onChanged;
+  @override
+  _TapboxCState createState() => new _TapboxCState();
+}
+
+class _TapboxCState extends State<TapboxC>{
+  bool _highlight = false;
+
+  void _handleTapDown(TapDownDetails details){
+    setState(() {
+      _highlight = true;
+    });
+  }
+
+  void _handleTapUp(TapUpDetails details){
+    setState(() {
+      _highlight = false;
+    });
+  }
+
+  void _handleTapCancel(){
+    setState(() {
+      _highlight = false;
+    });
+  }
+
+  void _handleTap(){
+    widget.onChanged(!widget.active);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return new GestureDetector(
+      onTapDown: _handleTapDown,
+      onTapUp: _handleTapUp,
+      onTap: _handleTap,
+      onTapCancel: _handleTapCancel,
+      child: new Container(
+        child: new Center(
+          child: new Text(widget.active ? 'Active' : 'Inactive',
+          style: new TextStyle(fontSize: 32, color: Colors.white),),
+        ),
+        width: 200.0,
+        height: 200.0,
+        decoration: new BoxDecoration(
+          color: widget.active ? Colors.lightGreen[700] : Colors.grey[600],
+          border: _highlight
+              ? new Border.all(
+            color: Colors.teal[700],
+            width: 10.0,
+          )
+              : null,
+
+        ),
+      ),
+    );
+  }
+}
+
+
+class TapBoxB extends StatelessWidget{
+  TapBoxB({Key key, this.active, @required this.onChanged}):super(key:key);
+  final bool active;
+  final ValueChanged<bool> onChanged;
+  void _handleTap(){
+    onChanged(!active);
+  }
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return new GestureDetector(
+      onTap: _handleTap,
+      child: new Container(
+        child: new Center(
+          child: new Text(
+            active ? 'Active' : 'Inactive',
+            style: new TextStyle(fontSize: 32, color: Colors.white),
+          ),
+        ),
+        width: 200,
+        height: 200,
+        decoration: new BoxDecoration(
+          color: active ? Colors.lightGreen[700] : Colors.grey[600],
+        ),
+      ),
+    );
+  }
+}
+
+
+class TapBoxA extends StatefulWidget{
+  TapBoxA({Key key}): super(key:key);
+  @override
+  _TapBoxAState createState() => new _TapBoxAState();
+}
+
+class _TapBoxAState extends State<TapBoxA>{
+  bool _active = false;
+
+  void _handleTap(){
+    setState(() {
+      _active = !_active;
+    });
+  }
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return new GestureDetector(
+      onTap: _handleTap,
+      child: new Container(
+        child: new Center(
+          child: new Text(
+            _active ? "Active" : "Inactive",
+            style: new TextStyle(fontSize: 32.0, color: Colors.white),
+          ),
+        ),
+        width: 200,
+        height: 200,
+        decoration: new BoxDecoration(
+          color: _active ? Colors.lightGreen[700] : Colors.grey[600],
+        ),
+      ),
+    );
+  }
+}
+
+
+
+
 class NewRoute extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+//    return Echo(text: "Hello world",);
+    void _onpressde(){
+
+    }
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("New route"),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+//            FlatButton.icon(onPressed: _onpressde, icon: Icon(Icons.send), label: Text("发送"))
+            FlatButton(
+              color: Colors.blue,
+              highlightColor: Colors.blue[700],
+              colorBrightness: Brightness.dark,
+              splashColor: Colors.grey,
+              child: Text('submit'),
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+              onPressed: _onpressde,
+            )
+            ]
+        ),
+      ),
+    );
+  }
+}
+
+class NewRouteText extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -160,7 +361,41 @@ class NewRoute extends StatelessWidget{
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
 //            Echo(text: "Hello world")
-            CounterWidget()
+//            CounterWidget()
+            Text("hello world", textAlign: TextAlign.left,),
+            Text("hello world"*6,maxLines: 1, overflow: TextOverflow.ellipsis),
+            Text("hello world", textScaleFactor: 1.5,),
+            Text("hello world",
+            style: TextStyle(
+                color: Colors.blue,
+                fontSize: 18,
+                height: 1.2,
+                fontFamily: "Courier",
+                background: new Paint()..color = Colors.yellow,
+                decoration: TextDecoration.underline,
+                decorationStyle: TextDecorationStyle.dashed
+              ),
+            ),
+            DefaultTextStyle(
+              style: TextStyle(
+                color: Colors.red,
+                fontSize: 20
+              ),
+              textAlign: TextAlign.start,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Text("hello world"),
+                  Text("Im jack"),
+                  Text("Im jack",
+                    style: TextStyle(
+                      inherit: false,
+                      color: Colors.grey
+                    ),
+                  )
+                ],
+              ),
+            )
           ],
 
 //          children: <Widget>[
@@ -389,5 +624,43 @@ class _CounterWidgetState extends State<CounterWidget>{
     // TODO: implement didChangeDependencies
     super.didChangeDependencies();
     print("didChangeDependencies");
+  }
+}
+
+
+class SnackBarWidget extends StatefulWidget{
+  @override
+  _SnackBarWidgetState createState() => new _SnackBarWidgetState();
+}
+
+class _SnackBarWidgetState extends State<SnackBarWidget>{
+
+  static GlobalKey<ScaffoldState> _globalKey = GlobalKey();
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Scaffold(
+      key: _globalKey,
+      appBar: AppBar(
+        title: Text("子树中获取State对象"),
+      ),
+      body: Center(
+        child: Builder(builder: (context){
+          return RaisedButton(
+              onPressed: (){
+//                ScaffoldState _state = context.findAncestorStateOfType<ScaffoldState>();
+//                ScaffoldState _state = Scaffold.of(context);
+                  ScaffoldState _state = _globalKey.currentState;
+                _state.showSnackBar(
+                  SnackBar(
+                    content: Text("我是SnackBar"),
+                  )
+                );
+              },
+            child: Text("显示SnackBar"),
+          );
+        }),
+      ),
+    );
   }
 }
