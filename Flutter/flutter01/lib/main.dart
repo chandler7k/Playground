@@ -32,6 +32,7 @@ class MyApp extends StatelessWidget {
       // 注册路由表
       routes: {
         "new_page":(context) => NewRouteTextField(),
+        "FormTestRoute":(context) => FormTestRoute(),
         "FocusTestRoute":(context) => FocusTestRoute(),
         "echo_page":(context) => EchoRoute(),
         "context_Route":(context) => ContextRoute(),
@@ -39,6 +40,7 @@ class MyApp extends StatelessWidget {
         "SnackBarWidget":(context) => SnackBarWidget(),
         "TapBoxA":(context) => TapBoxA(),
         "ParentWidget":(context) => ParentWidget(),
+        "ProgressRoute":(context) => ProgressRoute(),
         "SwitchAndCheckBoxTestRoute":(context) => SwitchAndCheckBoxTestRoute(),
         "/":(context) => MyHomePage(title: 'Flutter Demo Home Page'),
       },
@@ -138,7 +140,7 @@ class _MyHomePageState extends State<MyHomePage> {
 //                },
 //                  fullscreenDialog: true,
 //                ));
-              Navigator.pushNamed(context, "FocusTestRoute",);
+              Navigator.pushNamed(context, "ProgressRoute",);
               },
             ),
 
@@ -153,6 +155,140 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+
+class ProgressRoute extends StatefulWidget{
+  @override
+  _ProgressRouteState createState() => new _ProgressRouteState();
+
+}
+
+class _ProgressRouteState extends State<ProgressRoute> with SingleTickerProviderStateMixin{
+  AnimationController _animationController;
+  @override
+  void initState() {
+    // TODO: implement initState
+    _animationController = new AnimationController(vsync: this, duration: Duration(seconds: 3));
+    _animationController.forward();
+    _animationController.addListener(() => setState(() => {}));
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    _animationController.dispose();
+    super.dispose();
+  }
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("hello"),
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: <Widget>[
+            Padding(
+              padding: EdgeInsets.all(16),
+              child: LinearProgressIndicator(
+                backgroundColor: Colors.grey[200],
+                valueColor: ColorTween(begin: Colors.grey, end: Colors.blue).animate(_animationController),
+                value: _animationController.value,
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+
+class FormTestRoute extends StatefulWidget{
+  @override
+  _FormTextRouteState createState() => new _FormTextRouteState();
+}
+
+class _FormTextRouteState extends State<FormTestRoute>{
+  TextEditingController _usernameController = new TextEditingController();
+  TextEditingController _pwdController = new TextEditingController();
+  GlobalKey _formKey = new GlobalKey<FormState>();
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("From Test"),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 24),
+        child: Form(
+          key: _formKey,
+          autovalidate: true,
+          child: Column(
+            children: <Widget>[
+              TextFormField(
+                autofocus: true,
+                controller: _usernameController,
+                decoration: InputDecoration(
+                  labelText: "用户名",
+                  hintText: "用户名邮箱",
+                  icon: Icon(Icons.person)
+                ),
+                validator: (v){
+                  return v.trim().length > 0 ? null : "用户名不能为空";
+                },
+              ),
+              TextFormField(
+                controller: _pwdController,
+                decoration: InputDecoration(
+                    labelText: "密码",
+                    hintText: "您的登录密码",
+                    icon: Icon(Icons.lock)
+                ),
+                obscureText: true,
+                validator: (v){
+                  return v.trim().length > 5 ? null : "密码不能少于6位";
+                },
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 28),
+                child: Row(
+                  children: <Widget>[
+                    Expanded(
+                      child: Builder(builder: (context){
+                        return RaisedButton(
+                          padding: EdgeInsets.all(15),
+                          child: Text("登录"),
+                          color: Theme.of(context).primaryColor,
+                          textColor: Colors.white,
+                          onPressed: (){
+                            if((_formKey.currentState as FormState).validate()){
+
+                            }
+                          },
+                        );
+                      },)
+                    ),
+//                    SizedBox(
+//                      height: 3,
+//                      child: LinearProgressIndicator(
+//                        backgroundColor: Colors.grey[200],
+//                        valueColor: AlwaysStoppedAnimation(Colors.blue),
+//                      ),
+//                    )
+                  ],
+                ),
+              )
+            ],
+          ),
+        ),
+      ),
+    );
+
+  }
+}
+
 
 class FocusTestRoute extends StatefulWidget{
   @override
@@ -223,7 +359,51 @@ class _FocusTestRouteState extends State<FocusTestRoute>{
                   )
                 ],
               );
-            },)
+            },),
+            Theme(
+              data: Theme.of(context).copyWith(
+                hintColor: Colors.grey[200],
+                inputDecorationTheme: InputDecorationTheme(
+                  labelStyle: TextStyle(color: Colors.grey),
+                  hintStyle: TextStyle(color: Colors.grey, fontSize: 14.0)
+                )
+              ),
+              child: Column(
+                children: <Widget>[
+                  TextField(
+                    decoration: InputDecoration(
+                        labelText: "用户名",
+                        hintText: "用户名或邮箱",
+                        prefixIcon: Icon(Icons.person)
+                    ),
+                  ),
+                  TextField(
+                    decoration: InputDecoration(
+                        prefixIcon: Icon(Icons.lock),
+                        labelText: "密码",
+                        hintText: "您的登录密码",
+                        hintStyle: TextStyle(color: Colors.grey, fontSize: 13.0)
+                    ),
+                    obscureText: true,
+                  )
+                ],
+              ),
+            ),
+            Container(
+              child: TextField(
+                keyboardType: TextInputType.emailAddress,
+                decoration: InputDecoration(
+                    labelText: "Email",
+                    hintText: "电子邮件地址",
+                    prefixIcon: Icon(Icons.email),
+                    border: InputBorder.none //隐藏下划线
+                ),
+              ),
+              decoration: BoxDecoration(
+                // 下滑线浅灰色，宽度1像素
+                  border: Border(bottom: BorderSide(color: Colors.grey[200], width: 1.0))
+              ),
+            ),
           ],
         ),
       ),
