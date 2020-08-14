@@ -41,6 +41,7 @@ class MyApp extends StatelessWidget {
         "TapBoxA":(context) => TapBoxA(),
         "ParentWidget":(context) => ParentWidget(),
         "ProgressRoute":(context) => ProgressRoute(),
+        "LayoutRoute":(context) => LayoutRoute(),
         "SwitchAndCheckBoxTestRoute":(context) => SwitchAndCheckBoxTestRoute(),
         "/":(context) => MyHomePage(title: 'Flutter Demo Home Page'),
       },
@@ -140,7 +141,7 @@ class _MyHomePageState extends State<MyHomePage> {
 //                },
 //                  fullscreenDialog: true,
 //                ));
-              Navigator.pushNamed(context, "ProgressRoute",);
+              Navigator.pushNamed(context, "LayoutRoute",);
               },
             ),
 
@@ -152,6 +153,54 @@ class _MyHomePageState extends State<MyHomePage> {
         tooltip: 'Increment',
         child: Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
+    );
+  }
+}
+
+class LayoutRoute extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("layout"),
+      ),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text(" hello world "),
+              Text(" jack ")
+            ],
+          ),
+          Row(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text(" hello world "),
+              Text(" jack ")
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            textDirection: TextDirection.rtl,
+            children: <Widget>[
+              Text(" hello world "),
+              Text(" jack ")
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            verticalDirection: VerticalDirection.up,
+            children: <Widget>[
+              Text(" hello world ", style: TextStyle(fontSize: 30),),
+              Text(" jack ")
+            ],
+          ),
+        ],
+      ),
     );
   }
 }
